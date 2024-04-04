@@ -1,6 +1,11 @@
 <nav class="navbar bg-body-tertiary fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Presto Deluxe</a>
+      <a class="navbar-brand" href="{{route('welcome')}}">Presto Deluxe</a>
+{{-- 
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
+      </li> --}}
+     
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -15,7 +20,7 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="{{route('announcements.create')}}">Nuovo annuncio</a>
             </li>
             @auth        
 
