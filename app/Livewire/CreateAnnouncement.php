@@ -32,7 +32,7 @@ class CreateAnnouncement extends Component
             'price'=>$this->price,
         ]);
 
-        // Auth::user()->announcements()->save($announcement);
+        Auth::user()->announcements()->save($announcement);
 
     
         $this->formreset();
