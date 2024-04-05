@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[PageController::class, 'home'])->name('welcome');
 
-Route::get('/nuovo/annuncio',[AnnouncementController::class, 'createAnnouncement'])->name('announcements.create');
+Route::get('/nuovo/annuncio',[AnnouncementController::class, 'createAnnouncement'])->middleware('auth')->name('announcements.create');
