@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Category;
 use App\Models\Announcement;
 use Livewire\Attributes\Validate;
+use Illuminate\Support\Facades\Auth;
 
 class CreateAnnouncement extends Component
 {
@@ -25,11 +26,13 @@ class CreateAnnouncement extends Component
         $category = Category::find($this->category);
         //tramite la variabile che contiene l'oggetto category sfruttiamo la relazione 1aN dichiarata nel modello
         //per far si che si colleghi agli annunci che qualsiasi utente creerà. 
-        $category->announcements()->create([//sfruttiamo l'assegnazione di massa con il metodo create per inserire i valori che l'utente compilerà nel form
+        $announcement = $category->announcements()->create([//sfruttiamo l'assegnazione di massa con il metodo create per inserire i valori che l'utente compilerà nel form
             'title'=>$this->title,
             'body'=>$this->body,
             'price'=>$this->price,
         ]);
+
+        Auth::user()->announcements()->save($announcement);
 
     
         $this->formreset();
