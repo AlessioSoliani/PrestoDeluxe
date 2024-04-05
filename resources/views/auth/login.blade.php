@@ -1,5 +1,6 @@
 <x-main>
-<h1 class='text-center display-1 mt-5'>Login</h1>
+  <div class="deluxe">
+<h1 class='text-center display-1 mt-5 deluxe'>Login</h1>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-md-4">
@@ -24,10 +25,10 @@
                     <input type="checkbox" class="form-check-input" >
                  </div>
              
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn color-secondary">Submit</button>
               </form>
         </div>
     </div>
 </div>
-
+</div>
 </x-main>

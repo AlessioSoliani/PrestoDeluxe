@@ -1,0 +1,18 @@
+*{
+    font-family: "Cinzel", serif !important;
+    font-optical-sizing: auto;
+    font-weight: 500px;
+    font-style: normal;  
+    color:#e0ad21;
+}
+
+.deluxe{
+    margin-top: 80px;
+    align-items: center;
+}
+
+.color-secondary{
+    background-color:#e0ad21;
+    color: black;
+    font-weight: bold;
+}
