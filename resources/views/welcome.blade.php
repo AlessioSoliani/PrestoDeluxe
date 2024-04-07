@@ -19,10 +19,5 @@
                </div>
             @endforeach
         </div>
-    </section>
-
-
-
-
-    
+    </section>    
 </x-main>
