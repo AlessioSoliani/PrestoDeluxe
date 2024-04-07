@@ -44,7 +44,7 @@
     </form>
 
       @if (session()->has('success'))
-      <div class="w-100 alert alert-info text-center display-6 mt-5" role="alert">
+      <div class="w-100 rounded  text-center display-6 mt-5" role="alert">
           {{session('success')}}
       </div>
       @endif

@@ -7,11 +7,36 @@
 }
 hr{
     color: #e09621;
-    border: solid 2px;
+    border: solid 1px;
     margin-left: 10%;
     margin-right: 10%;
 
 }
+
+.bgr-primary{
+    background-color: rgb(33, 37, 41);
+}
+
+.bgr-secondary{
+    background-color: #e0ad21;
+}
+
+.bgr-terziary{
+    background-color: rgb(43, 48, 53);
+}
+
+.color-primary{
+    color: rgb(33, 37, 41);
+}
+
+.color-secondary{
+    color: #e0ad21;
+}
+
+.color-terziary{
+    color: rgb(43, 48, 53);
+}
+
 
 nav{
     height: 80px;
