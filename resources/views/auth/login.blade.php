@@ -24,7 +24,6 @@
                     <label class="form-label" name="remember">check me out</label>
                     <input type="checkbox" class="form-check-input" >
                  </div>
-             
                 <button type="submit" class="btn color-secondary">Submit</button>
               </form>
         </div>
