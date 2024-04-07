@@ -5,6 +5,29 @@
     font-style: normal;  
     color:#e0ad21;
 }
+hr{
+    color: #e09621;
+    border: solid 2px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+nav{
+    height: 80px;
+}
+
+.TitleNav{
+    font-size: xx-large;
+    transition: transform;
+    transition-duration: 500ms 
+}
+.TitleNav:hover{
+    font-size: xx-large;
+    color: #e0ad21;
+    transform: scale(1.2);
+}
+
 
 .deluxe{
     margin-top: 80px;
@@ -16,3 +39,30 @@
     color: black;
     font-weight: bold;
 }
+
+.deluxe-style{
+ border: 1px solid transparent ;
+}
+
+.deluxe-style a:hover{
+    border: 1px solid #e0ad21;
+}
+
+
+.img_logo{
+    width:50px;
+    height: auto ;
+}
+
+.btn-offcanvas{
+    color: #e0ad21;
+    border:1px solid transparent;
+}
+
+.offcanvas-nav {
+    background-color: transparent; /* Rimuove il colore di sfondo */
+    padding: 0; /* Rimuove il padding */
+    /* border-top: none; Rimuove il bordo superiore */
+    text-align: center; /* Puoi personalizzare l'allineamento del testo se necessario */
+    margin: 0%;
+  }
