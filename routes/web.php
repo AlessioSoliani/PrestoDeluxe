@@ -20,3 +20,5 @@ Route::get('/',[PageController::class, 'home'])->name('welcome');
 Route::get('/nuovo/annuncio',[AnnouncementController::class, 'createAnnouncement'])->middleware('auth')->name('announcements.create');
 
 Route::get('/categoria/{category}',[PageController::class,'categoryShow'])->name('categoryShow');
+
+Route::get('/dettaglio/annuncio/{announcement}',[AnnouncementController::class,'showAnnouncement'])->middleware('auth')->name('announcements.show');
