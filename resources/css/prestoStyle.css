@@ -152,7 +152,7 @@ nav{
 
   /* } */ 
 
-  /* //style show.blade.announcements */
+  /* inizio carosello */
   corpo {
     min-height: 100dvh;
     display: flex;
@@ -263,4 +263,5 @@ nav{
       }
     }
   }
+  /*fine carosello*/
   
