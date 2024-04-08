@@ -13,8 +13,11 @@
 </head>
 <body>
 
-    
+
     <x-nav/>
+    <div class="background_image"></div>
+
+    
     {{$slot}}
 
     <script src="https://kit.fontawesome.com/e67ed88741.js" crossorigin="anonymous"></script>

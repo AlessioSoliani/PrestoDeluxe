@@ -1,9 +1,10 @@
 *{
     font-family: "Cinzel", serif !important;
     font-optical-sizing: auto;
-    font-weight: 500px;
+    font-weight: 400px;
     font-style: normal;  
-    color:#e0ad21;
+    color:rgb(199, 159, 50);
+
 }
 hr{
     color: #e09621;
@@ -11,6 +12,14 @@ hr{
     margin-left: 10%;
     margin-right: 10%;
 
+}
+
+.background_image{
+    background-image: url('background_image.mp4');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width:200px ;
+    height: 100vh;
 }
 
 .bgr-primary{
@@ -75,7 +84,7 @@ nav{
 
 
 .img_logo{
-    width:50px;
+    width:8vh;
     height: auto ;
 }
 
@@ -92,7 +101,7 @@ nav{
     margin: 0%;
   }
 
-  .swiper {
+  /* .swiper {
     width: 300px;
     height: 300px;
     position: absolute;
@@ -110,4 +119,4 @@ nav{
   .swiper-slide img {
     display: block;
     width: 100%;
-  }
+  } */

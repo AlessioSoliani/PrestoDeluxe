@@ -1,5 +1,5 @@
 <nav class="navbar bg-body-tertiary fixed-top">
-    <div class="container-fluid">
+    <div class=" nav-deluxe container-fluid">
       <div>
         <img class="img_logo" src="DiamanteLogo.png" alt="">
       </div>
@@ -49,6 +49,20 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item deluxe-style dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorie
+            </a>
+
+            <ul class="dropdown-menu">
+              @foreach($categories as $category )
+              <li><a class="dropdown-item" href="{{route('categoryShow',compact('category'))}}">{{$category->name}}</a></li>
+                <hr class="dropdown-divider">
+              </li>
+              @endforeach
+            </ul>
+          </li>
+        </ul>
           @else
           <li class="nav-item deluxe-style">
             <a class="nav-link" href="/login">Login</a>
@@ -57,20 +71,7 @@
             <a class="nav-link" href="/register">Register</a>
           </li>  
           @endauth
-            <li class="nav-item deluxe-style dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Categorie
-              </a>
-
-              <ul class="dropdown-menu">
-                @foreach($categories as $category )
-                <li><a class="dropdown-item" href="{{route('categoryShow',compact('category'))}}">{{$category->name}}</a></li>
-                  <hr class="dropdown-divider">
-                </li>
-                @endforeach
-              </ul>
-            </li>
-          </ul>
+            
 
           <form class="d-flex mt-3" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
