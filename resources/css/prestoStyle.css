@@ -14,13 +14,13 @@ hr{
 
 }
 
-.background_image{
+/* .background_image{
     background-image: url('background_image.mp4');
     background-size: contain;
     background-repeat: no-repeat;
     width:200px ;
     height: 100vh;
-}
+} */
 
 .bgr-primary{
     background-color: rgb(33, 37, 41);
@@ -49,7 +49,15 @@ hr{
 
 nav{
     height: 80px;
+
 }
+
+:focus-visible {
+    outline:0px ;
+}
+
+
+
 
 .TitleNav{
     font-size: xx-large;
@@ -120,3 +128,26 @@ nav{
     display: block;
     width: 100%;
   } */
+
+  /* @media only screen and (max-width: 767px){
+
+    nav{
+        height: 80px;
+    }
+    
+    .TitleNav{
+        font-size: xx-large;
+        transition: transform;
+        transition-duration: 500ms 
+    }
+    .TitleNav:hover{
+        font-size: xx-large;
+        color: #e0ad21;
+        transform: scale(1.2);
+    }
+    /* .img_logo{
+        width:auto;
+        height: auto ;
+    } */
+
+  /* } */ 
