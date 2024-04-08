@@ -20,7 +20,7 @@
                                     <main class="carousel-container">
                                         <div class="carousel">
                                           <div class="item active">
-                                            <!-- annuncio da revisionare -->
+                                            <!-- annuncio da revisionare  -->
                                             <img src="https://bit.ly/34xczKy" alt="Image 1" />
                                             <p class="caption"></p>
                                           </div>
@@ -42,7 +42,18 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="text-center mt-5">
+                    <h5>Titolo: {{$announcement_to_check->title}}</h5>
+                    <p>Descrizione: {{$announcement_to_check->body}}</p>
+                    <p>Pubblicato il: {{$announcement_to_check->created_at->format('d/m/Y')}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <p>QUI CI VA IL FORM</p>
+                        <button class="mt-3">Accetta</button>
+                        <button class="mt-3">Rifiuta</button>
+                    </div>
                 </div>
             </div>
         </section>
