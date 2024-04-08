@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\AnnouncementController;
-use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\AnnouncementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,8 @@ Route::get('/nuovo/annuncio',[AnnouncementController::class, 'createAnnouncement
 Route::get('/categoria/{category}',[PageController::class,'categoryShow'])->name('categoryShow');
 
 Route::get('/dettaglio/annuncio/{announcement}',[AnnouncementController::class,'showAnnouncement'])->middleware('auth')->name('announcements.show');
+
+Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.index');
+
+
+

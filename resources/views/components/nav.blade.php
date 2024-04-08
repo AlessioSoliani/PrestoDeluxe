@@ -9,11 +9,6 @@
         </div>
       
      
-{{-- 
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
-      </li> --}}
-     
       <button  class="navbar-toggler offcanvas-nav  btn-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
          <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt="">
       </button>
@@ -31,7 +26,21 @@
             @auth 
             <li class="nav-item">
               <a class="nav-link" href="{{route('announcements.create')}}">Nuovo annuncio</a>
-            </li>       
+            </li>
+            
+            @if(Auth::user()->is_revisor)
+            <!-- se l'utente è revisore vedrà la sezione Zona Revisore con il numero di annunci da revisionare -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('revisor.index')}}">Zona Revisore
+                <!-- numero di annunci da revisionare -->
+                <!-- toBeRevisionedCount funzione nel MOLDEL di announcements -->
+              <span>{{App\Models\announcement::toBeRevisionedCount()}}
+                <span>Messaggi non letti</span>
+              </span>
+            </a>
+            </li>
+          
+            @endif
 
           <li class=" nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -72,7 +81,6 @@
           </li>  
           @endauth
             
-
           <form class="d-flex mt-3" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-warning"  type="submit">Search</button>

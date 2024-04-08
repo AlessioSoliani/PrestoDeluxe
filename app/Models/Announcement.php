@@ -19,4 +19,9 @@ class Announcement extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    // restituisce il numero di annunci in attese si essere revisionati ovvero che hanno null nel DB
+    public static function toBeRevisionedCount(){
+        return Announcement::where('is_accepted')->count();
+    }
 }

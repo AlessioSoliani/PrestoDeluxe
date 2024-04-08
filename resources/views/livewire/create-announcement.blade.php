@@ -18,7 +18,7 @@
           </div>
 
 
-          <div class="mb-3">
+          <div class="mb-3 mt-3">
             <label for="category">Categoria</label>
             <select class=" mt-3 mb-3 border border-warning rounded-2 form-select" wire:model.defer="category">
                 <option>Scegli La Categoria</option>
