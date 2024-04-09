@@ -5,8 +5,9 @@
 }
 
 .card-style-home{
+    /* height:30%; */
+    width:20%;
     height: auto;
-    width: auto;
     margin: 3%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: transform;
@@ -18,3 +19,18 @@
     box-shadow: 0 8px 16px 0 rgb(199, 159, 50);
     transform: scale(1.1);
   }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    padding: 2%; /* Spaziatura interna del contenuto della card */
+  }
+
+  
+  .card-style-home img {
+    
+    width: 100%; /* Assicura che l'immagine si adatti alla larghezza della card */
+    height: auto; /* Impedisce il ritaglio dell'immagine */
+    display: block; /* Impedisce spazi bianchi sotto l'immagine */
+}

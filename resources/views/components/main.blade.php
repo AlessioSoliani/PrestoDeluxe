@@ -13,9 +13,8 @@
 </head>
 <body>
 
-
     <x-nav/>
-    {{-- <div class="background_image"></div> --}}
+   
 
     
     {{$slot}}

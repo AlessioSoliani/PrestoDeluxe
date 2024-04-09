@@ -1,8 +1,16 @@
 <x-main>
-    <div class="container corpo">
-        <h1 class=" mt-5 text-center">Deluxe{{$announcement->title}}</h1>
 
-        <section class="container">
+  <div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+          <h1 class=" mt-5 text-center">Deluxe{{$announcement->title}}</h1>        
+        </div>
+    </div>
+   </div>
+  
+      
+
+        <section class=" mt-5container">
             <div class="row">
                 <div class="col-12">
                     <ul class="gallery">
@@ -42,6 +50,6 @@
             </div>
         </section>
 
-    </div>
+  
    
 </x-main>
