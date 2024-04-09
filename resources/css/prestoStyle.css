@@ -262,7 +262,7 @@ nav{
       height: auto;
       transition: transform;
       transition-duration: 500ms 
-      
+    
     
     }
 
@@ -294,7 +294,3 @@ nav{
   }
   /*fine carosello*/
   
-  .menu{
-    margin-right: 2%;
-    font-size: x-large;
-  }
