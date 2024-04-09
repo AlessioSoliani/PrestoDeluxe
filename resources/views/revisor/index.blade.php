@@ -3,13 +3,13 @@
     <div class="container mt-5 pt-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">
-                <h1>{{$announcement_to_check ? "Annuncio deluxe da revisionare":"Non ci sono annunci da revisionare"}}</h1>
+                <h1 class=" display-3 text-center">{{$announcement_to_check ? "Deluxe da revisionare":"Non ci sono annunci da revisionare"}}</h1>
             </div>
         </div>
     </div>
 
     @if($announcement_to_check)
-        <section class="container">
+        <section class=" mt-5 container">
             <div class="row">
                 <div class="col-12">
                     
@@ -34,7 +34,7 @@
                                           </div>
                                         </div>
                                         <button class="btn prev">Prev</button>
-                                        <button class="btn next">Next</button>
+                                        <button class="btn next ">Next</button>
                                         <div class="dots"></div>
                                       </main>
                                 </ul>                 
@@ -49,23 +49,24 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-6">
-                        <p>QUI CI VA IL FORM</p>
-                        <button class="mt-3">Accetta</button>
-                        <button class="mt-3">Rifiuta</button>
+                    <div class="col-12 col-md-6 text-center">
+                        <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button class="btn btn-outline-warning" type="submit">Accetta</button>
+                        </form>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                       <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
+                           @csrf
+                           @method('PATCH')
+                           <button class="btn btn-outline-danger" type="submit">Rifiuta</button>
+                       </form>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="row">
-            <div class="col-12 col-md-6">
-
-            </div>
-            <div class="col-12 col-md-6 text-end">
-                
-            </div>
-        </div>
-
+      
     @endif
 
 </x-main>

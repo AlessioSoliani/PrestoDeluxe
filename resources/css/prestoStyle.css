@@ -239,11 +239,34 @@ nav{
     }
   
     .prev {
-      left: -5%;
+      background-color: #10100e;
+      color: #e0ad21;
+      width: 1%;
+      height: auto;
+      transition: transform;
+      transition-duration: 500ms 
+    }
+    .prev:hover{
+      background-color:#e0ad21; 
+      color:#10100e; 
+      transform: scale(1.1);
     }
   
     .next {
-      right: -5%;
+      
+      background-color: #e0ad21;
+      color: #10100e;
+      width: 1%;
+      height: auto;
+      transition: transform;
+      transition-duration: 500ms 
+    
+    }
+
+    .next:hover{
+      background-color:#10100e; 
+      color: #e0ad21; 
+      transform: scale(1.1);
     }
   
     .dots {
