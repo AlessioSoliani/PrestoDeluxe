@@ -27,7 +27,10 @@
 
                 <div class="col-12">
                     <p class="h1">Non sono presenti annunci in questa categoria</p>
-                    <p class="h2">Pubblicane uno<a href="{{route('announcements.create')}}"></a></p>
+                    <p class="h2">Pubblicane uno</p>
+                    <a class="btn btn-outline-warning" href="{{route('announcements.create')}}"> Crea il tuo articolo</a>
+                    
+                   
                 </div>
                     
                 @endforelse

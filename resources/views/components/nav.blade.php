@@ -9,12 +9,13 @@
         </div>
       
      
-      <button  class="navbar-toggler offcanvas-nav  btn-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-         <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt="">
+      <button  class=" offcanvas-nav  btn-offcanvas menu " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <!-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt="">-->
+        Menu
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -31,11 +32,11 @@
             @if(Auth::user()->is_revisor)
             <!-- se l'utente è revisore vedrà la sezione Zona Revisore con il numero di annunci da revisionare -->
             <li class="nav-item">
-              <a class="nav-link" href="{{route('revisor.index')}}">Zona Revisore
+              <a class="nav-link" href="{{route('revisor.index')}}">Zona Revisore<br>
                 <!-- numero di annunci da revisionare -->
                 <!-- toBeRevisionedCount funzione nel MOLDEL di announcements -->
               <span>{{App\Models\announcement::toBeRevisionedCount()}}
-                <span>Messaggi non letti</span>
+                <span>Annunci da revisionare</span>
               </span>
             </a>
             </li>
