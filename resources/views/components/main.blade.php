@@ -19,6 +19,8 @@
     
     {{$slot}}
 
+    <x-footer></x-footer>
+
     <script src="https://kit.fontawesome.com/e67ed88741.js" crossorigin="anonymous"></script>
 </body>
 </html>

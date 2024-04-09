@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\User;
 use Illuminate\Console\Command;
 
+// questo imposta il valore del revisore a 1 cioè sei diventato revisore
 class MakeUserRevisor extends Command
 {
     /**
@@ -12,7 +13,9 @@ class MakeUserRevisor extends Command
      *
      * @var string
      */
-    protected $signature = 'PrestoDeluxe:MakeUserRevisor{email}';
+
+    //comando creato in modo in maniera totalmente incosapevole 
+    protected $signature = 'PrestoDeluxe:MakeUserRevisor {email}';
 
     /**
      * The console command description.
