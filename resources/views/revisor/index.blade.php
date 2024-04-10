@@ -65,8 +65,13 @@
                     </div>
                 </div>
             </div>
-        </section>
-      
+        </section>      
+    @endif
+    @if (session()->has('message'))
+    <div class="w-50 text-center">
+        {{session('message')}}
+    </div>
+        
     @endif
 
 </x-main>

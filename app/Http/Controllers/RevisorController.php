@@ -43,7 +43,7 @@ class RevisorController extends Controller
         */
         Mail::to('prestodeluxe@example.com')->send(new BecomeRevisor(Auth::user()));
 
-        return redirect('/')->with('message','Complimenti! Hai chiesto di diventare revisore correttamente');
+        return redirect('/')->with(['message','Complimenti! Hai chiesto di diventare revisore correttamente']);
     }
 
     public function makeRevisor(User $user){
@@ -52,7 +52,7 @@ class RevisorController extends Controller
 
         // Richiamiamo il comando MakeUserRevisor di Commands\MakeUserRevisor che imposta a revisore l'utente 
         Artisan::call('PrestoDeluxe:MakeUserRevisor',['email'=>$user->email]);
-        return redirect('/')->with('message','Complimenti! Sei diventato un revisore..Bravo');
+        return redirect('/')->with(['message','Complimenti! Sei diventato un revisore..Bravo']);
     }
 
 

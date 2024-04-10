@@ -1,5 +1,5 @@
 <x-main>
-
+    
     <h1 class="text-center title display-1">Presto Deluxe</h1>
     <hr>
 
@@ -19,5 +19,10 @@
                </div>
             @endforeach
         </div>
-    </section>    
+    </section> 
+    @if (session()->has('message'))
+    <div class="w-50 text-center">
+        {{session('message')}}
+    </div>
+    @endif   
 </x-main>
