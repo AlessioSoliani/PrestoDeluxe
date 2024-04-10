@@ -62,16 +62,18 @@
                            @method('PATCH')
                            <button class="btn btn-outline-danger" type="submit">Rifiuta</button>
                        </form>
+                          
                     </div>
+
+                          @if (session()->has('message'))
+                              <div class="w-50 text-center">
+                                  {{session('message')}}
+                              </div>        
+                           @endif
                 </div>
             </div>
         </section>      
     @endif
-    @if (session()->has('message'))
-    <div class="w-50 text-center">
-        {{session('message')}}
-    </div>
-        
-    @endif
+    
 
 </x-main>

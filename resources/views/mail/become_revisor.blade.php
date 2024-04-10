@@ -15,5 +15,8 @@
         <p>Se vuoi renderlo revisore clicca qui</p>
         <a href="{{route('make.revisor',compact('user'))}}">Rendi Revisore</a>
     </div>
+        
+    
 </body>
+
 </html>
