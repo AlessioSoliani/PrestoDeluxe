@@ -68,7 +68,7 @@ nav{
 
 
 .TitleNav{
-    font-size:2vw;
+    font-size:30px;
     transition: transform;
     transition-duration: 500ms 
 }
@@ -266,3 +266,14 @@ nav{
   }
 
   /*commento per il pull*/
+
+  @media only screen and (max-width: 768px) {
+    .TitleNav{
+      font-size: 20px;
+    }
+    .img_logo{
+      width:3vh;
+      height: auto ;
+    }
+
+  }
