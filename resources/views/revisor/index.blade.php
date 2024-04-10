@@ -65,15 +65,19 @@
                           
                     </div>
 
-                          @if (session()->has('message'))
-                              <div class="w-50 text-center">
-                                  {{session('message')}}
-                              </div>        
-                           @endif
+                          
                 </div>
             </div>
         </section>      
     @endif
-    
+                            @if (session()->has('message'))                         
+                              <div class="conteiner ">
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8 text-center">
+                                        {{session('message')}}
+                                    </div>
+                                 </div> 
+                              </div>        
+                            @endif
 
 </x-main>
