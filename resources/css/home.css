@@ -6,7 +6,7 @@
 
 .card-style-home{
     /* height:30%; */
-    width:20%;
+    width:auto;
     height: auto;
     margin: 3%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);

@@ -68,7 +68,7 @@ nav{
 
 
 .TitleNav{
-    font-size: xx-large;
+    font-size:2vw;
     transition: transform;
     transition-duration: 500ms 
 }
@@ -105,11 +105,14 @@ nav{
 }
 
 .btn-offcanvas{
+  width: auto;
+  height: auto;
     color: #e0ad21;
     border:1px solid transparent;
 }
 
 .offcanvas-nav {
+  
     background-color: transparent; /* Rimuove il colore di sfondo */
     padding: 0; /* Rimuove il padding */
     /* border-top: none; Rimuove il bordo superiore */

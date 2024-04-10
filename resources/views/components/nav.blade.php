@@ -1,15 +1,15 @@
 <nav class="navbar bg-body-tertiary fixed-top">
-    <div class=" nav-deluxe container-fluid">
+    <div class=" d-flex justify-content-between container-fluid">
       
       
-        <div class="d-flex justify-content-start">
+        <div class="d-flex justify-content-center">
           {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
-          <a class="TitleNav navbar-brand" href="{{route('welcome')}}">Presto Deluxe</a>
+          <a class="ms-4  TitleNav navbar-brand text-center" href="{{route('welcome')}}">Presto Deluxe</a>
           {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
         </div>
       
      
-      <button  class=" offcanvas-nav  btn-offcanvas menu " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <button  class=" offcanvas-nav text-center btn-offcanvas menu " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt="">
         Menù
         <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt="">
@@ -92,3 +92,7 @@
       </div>
     </div>
   </nav>
+  
+  
+  
+  
