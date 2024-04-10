@@ -1,14 +1,14 @@
 <nav class="navbar bg-body-tertiary fixed-top">
     <div class=" d-flex justify-content-between container-fluid">
-      
-      
+
+
         <div class="d-flex justify-content-center">
           {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
           <a class="ms-4  TitleNav navbar-brand text-center" href="{{route('welcome')}}">Presto Deluxe</a>
           {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
         </div>
-      
-     
+
+
       <button  class=" offcanvas-nav text-center btn-offcanvas menu " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt="">
         Menù
@@ -25,12 +25,12 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
             </li>
-           
-            @auth 
+
+            @auth
             <li class="nav-item">
               <a class="nav-link" href="{{route('announcements.create')}}">Nuovo annuncio</a>
             </li>
-            
+
             @if(Auth::user()->is_revisor)
             <!-- se l'utente è revisore vedrà la sezione Zona Revisore con il numero di annunci da revisionare -->
             <li class="nav-item">
@@ -42,7 +42,7 @@
               </span>
             </a>
             </li>
-          
+
             @endif
 
           <li class=" nav-item dropdown">
@@ -50,8 +50,8 @@
               {{auth()->user()->name}}
 
             </a>
-            
-            <ul class="dropdown-menu">             
+
+            <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#" onclick="event.preventDefault();
               document.getElementById('form-logout').submit();
               ">logout</a>
@@ -81,18 +81,19 @@
           </li>
           <li class="nav-item deluxe-style">
             <a class="nav-link" href="/register">Register</a>
-          </li>  
+          </li>
           @endauth
-            
-          <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+          <form class="d-flex mt-3" role="search" action="{{route('announcements.search', compact('category'))}}" method="GET">
+            <input class="form-control me-2" type="search" name="searched" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-warning"  type="submit">Search</button>
-          </form> 
+          </form>
+
         </div>
       </div>
     </div>
   </nav>
-  
-  
-  
-  
+
+
+
+
