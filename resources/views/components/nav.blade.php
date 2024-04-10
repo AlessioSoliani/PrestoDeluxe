@@ -1,17 +1,19 @@
 <nav class="navbar bg-body-tertiary fixed-top">
     <div class=" nav-deluxe container-fluid">
-      <div>
-        <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt="">
-      </div>
       
-        <div class="d-flex justify-content-center">
-          <a class="  TitleNav navbar-brand text-center" href="{{route('welcome')}}">Presto Deluxe</a>
+      
+        <div class="d-flex justify-content-start">
+          {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
+          <a class="TitleNav navbar-brand" href="{{route('welcome')}}">Presto Deluxe</a>
+          {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
         </div>
       
      
       <button  class=" offcanvas-nav  btn-offcanvas menu " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <!-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt="">-->
-        Menu
+        <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt="">
+        Menù
+        <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt="">
+
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
