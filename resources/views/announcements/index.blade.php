@@ -17,29 +17,21 @@
                 <div class="card-body card-content mt-2">
                     <img src="https://picsum.photos/100" alt="">
                     <h5 class="text-center">{{$announcement->title}}</h5>
-                    <a href="{{route('announcements.show', compact('announcement'))}}"></a>
-                    <a href="{{route('categoryShow', ['category'=>$announcement->category])}}"></a>
                     <p class="text-center">{{$announcement->body}}</p>
+                    <a href="{{route('announcements.show', compact('announcement'))}}">VISUALIZZA</a>
+                    <a href="{{route('categoryShow', ['category'=>$announcement->category])}}">{{$announcement->category->name}}</a>
                     <p class="text-center">{{$announcement->price}}</p>
                     <p class="text-center">{{$announcement->category}}</p>
-                    <a class="btn btn-outline-warning" href="{{route('announcements.show',$announcement->id)}}">Visualizza</a>
+                    {{-- <a class="btn btn-outline-warning" href="{{route('announcements.show',$announcement->id)}}">Visualizza</a> --}}
 
                     <p>Pubblicato in data:{{$announcement->created_at->format('d/m/Y')}} Autore: {{$announcement->user->name ?? ''}}</p>
                 </div>
             </div>
             @empty
-
             <div class="col-12">
-                <p class="h1">Non sono presenti annunci in questa ricerca</p>
-                >
-
-
+                <p class="h1 text-center">Non sono presenti annunci in questa ricerca</p>              
             </div>
-
             @endforelse
         </div>
-
-
     </div>
-
 </x-main>

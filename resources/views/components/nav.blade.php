@@ -84,7 +84,7 @@
           </li>
           @endauth
 
-          <form class="d-flex mt-3" role="search" action="{{route('announcements.search', compact('category'))}}" method="GET">
+          <form class="d-flex mt-3" role="search" action="{{route('announcements.search')}}" method="GET">
             <input class="form-control me-2" type="search" name="searched" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-warning"  type="submit">Search</button>
           </form>

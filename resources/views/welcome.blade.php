@@ -21,7 +21,7 @@
         </div>
     </section> 
  
-    @if (session()->has('message'))                         
+ @if (session()->has('message'))                         
     <div class="conteiner ">
       <div class="row justify-content-center">
           <div class=" display-4 col-12 col-md-8 text-center">
@@ -29,5 +29,5 @@
           </div>
        </div> 
     </div>        
-  @endif
+@endif
 </x-main>

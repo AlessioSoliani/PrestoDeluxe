@@ -20,7 +20,7 @@ class PageController extends Controller
         return view('categoryShow', compact('category'));
     }
 
-    public function searchAnnouncements(Request $request){
+    public function searchAnnouncements(Request $request){       
         $announcements = Announcement::search($request->searched)->where('is_accepted',true)->paginate(10);
         return view ('announcements.index', compact('announcements'));
     }
