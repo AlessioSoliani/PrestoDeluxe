@@ -34,4 +34,5 @@
             @endforelse
         </div>
     </div>
+    {{$announcements->links()}}
 </x-main>
