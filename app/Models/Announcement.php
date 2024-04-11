@@ -36,7 +36,7 @@ class Announcement extends Model
     public static function toBeRevisionedCount(){
         return Announcement::where('is_accepted')->count();
     }
-
+    //funzione di ricerca
     public function toSearchableArray(){
        $category = $this->category;
        $array = [
