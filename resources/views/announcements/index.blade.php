@@ -24,7 +24,7 @@
                     <p class="text-center">{{$announcement->category}}</p>
                     {{-- <a class="btn btn-outline-warning" href="{{route('announcements.show',$announcement->id)}}">Visualizza</a> --}}
 
-                    <p>Pubblicato in data:{{$announcement->created_at->format('d/m/Y')}} Autore: {{$announcement->user->name ?? ''}}</p>
+                    <p>Pubblicato in data:{{$announcement->created_at->format('d/m/Y')}}</p>
                 </div>
             </div>
             @empty
