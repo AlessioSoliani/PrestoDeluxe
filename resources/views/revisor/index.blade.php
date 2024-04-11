@@ -49,23 +49,39 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-6 text-center">
+                    <div class="w-100 d-flex justify-content-around mt-3 col-12 col-md-4 text-center">
                         <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                             @csrf
                             @method('PATCH')
                             <button class="btn btn-outline-warning" type="submit">Accetta</button>
                         </form>
+                        <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button class="btn btn-outline-danger" type="submit">Rifiuta</button>
+                        </form>
+                        @if($lastAnnouncement)
+                        <form action="{{route('revisor.recover_announcement',$lastAnnouncement->id)}}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button class="btn btn-outline-success" type="submit">Recupera</button>
+                        </form>                
+                        @endif   
                     </div>
-                    <div class="col-12 col-md-6 text-center">
+                    {{-- <div class="col-12 col-md-6 text-center">
                        <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                            @csrf
                            @method('PATCH')
                            <button class="btn btn-outline-danger" type="submit">Rifiuta</button>
                        </form>
-                          
-                    </div>
-
-                          
+                     @if($lastAnnouncement)
+                    <form action="{{route('revisor.recover_announcement',$lastAnnouncement->id)}}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <button class="btn btn-outline-success" type="submit">Recupera</button>
+                    </form>                
+                    @endif          
+                    </div>                          --}}
                 </div>
             </div>
         </section>      

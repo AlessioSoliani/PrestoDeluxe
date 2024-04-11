@@ -31,10 +31,14 @@ Route::get('/revisor/home',[RevisorController::class,'index'])->middleware('IsRe
 Route::patch('/accetta/annuncio/{announcement}',[RevisorController::class,'acceptAnnouncement'])->middleware('IsRevisor')->name('revisor.accept_announcement');
 //Rotta rifiuta annuncio
 Route::patch('/rifiuta/annuncio/{announcement}',[RevisorController::class,'rejectAnnouncement'])->middleware('IsRevisor')->name('revisor.reject_announcement');
+
+Route::patch('/recupera/annuncio{announcement}',[RevisorController::class,'recoverAnnouncement'])->middleware('IsRevisor')->name('revisor.recover_announcement');
 //rotta per richiedere di diventare revisore 
 //Collegato anche middleware auth per risalire all'utente registrato (footer)
 Route::get('/richiesta/revisore',[RevisorController::class,'becomeRevisor'])->middleware('auth')->name('become.revisor');
 // rotta della mail, per rendere un utente revisore
 Route::get('/rendi/revisore{user}',[RevisorController::class,'makeRevisor'])->name('make.revisor');
+
+
 
 Route::get('/ricerca/annuncio',[PageController::class,'searchAnnouncements'])->name('announcements.search');

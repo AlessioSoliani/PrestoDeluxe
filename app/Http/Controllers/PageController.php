@@ -25,3 +25,5 @@ class PageController extends Controller
         return view ('announcements.index', compact('announcements'));
     }
 }
+
+//   
