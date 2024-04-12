@@ -72,6 +72,8 @@ class RevisorController extends Controller
         return redirect('/')->with(['message', 'Complimenti! Sei diventato un revisore..Bravo']);
     }
 
+    
+
 
    
 }

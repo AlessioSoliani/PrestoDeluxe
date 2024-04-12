@@ -1,27 +1,37 @@
 <x-main>
     
-    <h1 class="text-center title display-1">Presto Deluxe</h1>
+    <h1 class="text-center title display-5">Presto Deluxe</h1>
     <hr>
 
-    <section class="mt-5 container">
-        <div class="row justify-content-around">
-            @foreach ($announcements as $announcement) 
-               <div class="  col-12 col-md-4">
-                <div class="card-style-home card-body mt-2 card-content">                    
-                  <img class="mt-3" src="https://picsum.photos/100" alt="">
-                  <h5 class="text-center">{{$announcement->title}}</h5>
-                  <p class="text-center">{{$announcement->body}}</p>
-                  <p class="text-center">{{$announcement->price}}€</p>
-                  <a class="btn btn-outline-warning" href="{{route('announcements.show',$announcement->id)}}">Visualizza</a>
-                  <a class="btn btn-outline-success" href="{{route('categoryShow',$announcement->category->id)}}">{{$announcement->category->name}}</a>
-                  <p class="text-center">Pubblicato in data:{{$announcement->created_at->format('d/m/Y')}}</p>
-                </div>    
-               </div>
-            @endforeach
+
+    <section class="container">
+        <div class="row justify-content-center">            
+            @foreach ( $announcements as $announcement )
+              <div class=" card-style-home col-12 col-md-4" card" style="width: 18rem;">
+                  <div class=" d-flex justify-content-center">
+                       <img class="mt-3 img-style" src="https://picsum.photos/101" alt="">
+                  </div>
+                  <div class="card-body">
+                      <h5 class=" text-center card-title">{{$announcement->title}}</h5>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                      <li class="text-center list-group-item">{{$announcement->body}}</li>
+                      <li class="text-center list-group-item">{{$announcement->price}}€</li>
+                      {{-- <li class="list-group-item">{{$announcement->category}}$</li> --}}
+                      <li class="text-center list-group-item "> data:{{$announcement->created_at->format('d/m/Y')}}</li>
+                  </ul>
+                  <div class=" d-flex justify-content-around card-body mb-3">
+                        <a class="btn btn-outline-warning" href="{{route('announcements.show', compact('announcement'))}}">Show</a>
+                        <a class="btn btn-outline-light" href="{{route('categoryShow', ['category'=>$announcement->category])}}">{{$announcement->category->name}}</a>
+                  </div>
+              </div>
+            @endforeach()               
+                {{-- {{$announcements->links()}} --}}           
         </div>
-        
-        
-    </section> 
+    </section>
+
+
+    
  
  @if (session()->has('message'))                         
     <div class="conteiner ">

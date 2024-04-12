@@ -41,6 +41,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\GetCurrentRoute::class,
         ],
 
         'api' => [
@@ -71,5 +72,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         //abbiamo aggiunto il path del middleware nel middlewareAliases->(fai vedere che hai aggiunto il middleware alle rotte interessate)
         'IsRevisor'=> \App\Http\Middleware\IsRevisor::class,
+        'GetCurrentRoute'=>\App\Http\Middleware\GetCurrentRoute::class,
     ];
 }

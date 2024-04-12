@@ -18,8 +18,13 @@ class IsRevisor
      //custom middleware creato per gestire gli utenti che sono revisori
     public function handle(Request $request, Closure $next): Response
     {
+
+
+       
+
    //se l'utente(check=loggato) e se è anche revisore.. 
         if (Auth::check() && Auth::user()->is_revisor){
+           
             //procedi
             return $next($request);
 
