@@ -22,8 +22,8 @@ Route::get('/nuovo/annuncio',[AnnouncementController::class, 'createAnnouncement
 //Rotta parametrica delle categorie uttilizzata per passare (category) e prendere tutti gli articoli della singola categoria
 Route::get('/categoria/{category}',[PageController::class,'categoryShow'])->name('categoryShow');
 //Rotta parametrica per la pagina dettaglio del singolo annuncio
-Route::get('/dettaglio/annuncio/{announcement}',[AnnouncementController::class,'showAnnouncement'])->middleware('auth')->name('announcements.show');
-
+Route::get('/dettaglio/annuncio/{announcement}',[AnnouncementController::class,'showAnnouncement'])->name('announcements.show');
+//rotta per mostrare tutti gli annunci presenti nel sito
 Route::get('/tutti/annunci',[AnnouncementController::class,'indexAnnouncement'])->name('announcements.index');
 //home revisore
 Route::get('/revisor/home',[RevisorController::class,'index'])->middleware('IsRevisor')->name('revisor.index');

@@ -37,6 +37,7 @@
                 <p class="h1 text-center">Non sono presenti annunci in questa ricerca</p>              
             </div>
             @endforelse
+            {{$announcements->links()}}
         </div>
     </section>
 

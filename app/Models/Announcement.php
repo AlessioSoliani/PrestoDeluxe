@@ -21,7 +21,7 @@ class Announcement extends Model
     {
         return $this->belongsTo(Category::class);
     }
-
+  //funzione dove settiamo l'accettazione dell'annuncio in un valore null e che prenderà valore true o false in base all'accettazione o il rifiuto
     public function setAccepted($value){
         //il campo "is_accepted" dell'annuncio sul quale e richiamato il metodo sarà uguale al valore datogli dal revisore
         // true se accetta false se rifiuta(il parametro che arriverà)

@@ -28,7 +28,7 @@
 
             @auth
             <li class="nav-item">
-              <a class="nav-link" href="{{route('announcements.create')}}">Nuovo annuncio</a>
+              <a class="nav-link" href="{{route('announcements.create')}}">inserisci un Nuovo annuncio</a>
             </li>
 
             @if(Auth::user()->is_revisor)

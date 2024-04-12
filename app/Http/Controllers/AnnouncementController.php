@@ -10,14 +10,17 @@ class AnnouncementController extends Controller
     public function createAnnouncement(){
         return view('announcements.create');
     }
-
+//showAnn. prende l'annuncio con la dependency injection 
     public function showAnnouncement (Announcement $announcement){
+        // e rimanda alla vista, con una compact passiamo il dato dell'annuncio 
         return view('announcements.show',compact('announcement'));
     }
 
 
     public function indexAnnouncement(){
-        $announcements = Announcement::where('is_accepted',true)->paginate(15);
+        //dentro la variabile il modello announcement e dove is-accepted sara con valore true lo salviamo e motriamo nella vista 
+        //dedicata a tutti gli annunci 
+        $announcements = Announcement::where('is_accepted',true)->paginate(7);
         return view('announcements.index',compact('announcements'));
 
     }
