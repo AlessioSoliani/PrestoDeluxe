@@ -34,7 +34,7 @@
                                           </div>
                                         </div>
                                         <button class="btn prev">  
-                                            <i class="fa-sharp fa-thin fa-arrow-right fa-fade"></i>
+                                            <i class="fa-sharp fa-thin fa-arrow-right fa-fade">prev</i>
                                         </button>
                                         <button class="btn next ">Next</button>
                                         <div class="dots"></div>
