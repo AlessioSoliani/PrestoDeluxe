@@ -28,7 +28,7 @@ class RevisorController extends Controller
         //...richiamo la funzione setAccepted creata nell'modello Announcement..
         $announcement->setAccepted(true);
         //reindiriziamo con un messaggio affermativo 
-        return redirect()->back()->with('message', 'annuncio accettato');
+        return redirect()->back()->with('message', 'sicuro di aver preso la decisione esatta?');
     }
 
     public function rejectAnnouncement(Announcement $announcement)

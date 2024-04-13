@@ -63,13 +63,7 @@
                             <button class="btn btn-outline-danger" type="submit">Rifiuta</button>
                         </form>
                        
-                        @if($lastAnnouncement)
-                        <form action="{{route('revisor.recover_announcement',$lastAnnouncement->id)}}" method="POST">
-                          @csrf
-                          @method('PATCH')
-                          <button class="btn btn-outline-success" type="submit">Recupera</button>
-                       </form>                
-                     @endif 
+                    
                     </div>
                                 
                 </div>
@@ -81,6 +75,16 @@
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8 text-center">
                                         {{session('message')}}
+                                        @if($lastAnnouncement)
+                                        <form action="{{route('revisor.recover_announcement',$lastAnnouncement->id)}}" method="POST">
+                                          @csrf
+                                          @method('PATCH')
+                                          <button class="btn btn-outline-success" type="submit">Recupera</button>
+                                          <a href="{{route('welcome')}}" class="btn btn-outline-light" type="submit">Accetta</a>
+                                       </form> 
+                                       
+
+                                     @endif 
                                     </div>
                                  </div> 
                               </div>        
