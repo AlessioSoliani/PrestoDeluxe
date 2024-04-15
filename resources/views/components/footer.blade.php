@@ -5,18 +5,15 @@
         <div class="row justify-content-center">
             <div class="col-6 text-center mt-5">
               @unless ($currentRoute == 'register'|| $currentRoute == 'login')
-              {{-- $currentRoute == Auth::user()->'is_revisor' --}}
-              <h3>Register</h3>
-              <a class="btn btn-outline-warning" href="/register">click here</a>
+              <h3>Registrati</h3>
+              <a class="btn btn-outline-warning" href="/register">clicca quì</a>
             </div>
-            {{-- @if (isset($currentRoute)) --}}
            
             <div class="col-6 text-center mt-5">
-              <h3>Become revisor</h3>
-              <a class="btn btn-outline-light" href="{{route('become.revisor')}}">click here</a>
+              <h3>Diventa revisore</h3>
+              <a class="btn btn-outline-light" href="{{route('become.revisor')}}">clicca quì</a>
           </div>
             @endunless
-            {{-- @endif --}}
             
         </div>
     </div>
