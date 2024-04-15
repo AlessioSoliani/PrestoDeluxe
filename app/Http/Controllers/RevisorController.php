@@ -28,7 +28,7 @@ class RevisorController extends Controller
         //...richiamo la funzione setAccepted creata nell'modello Announcement..
         $announcement->setAccepted(true);
         //reindiriziamo con un messaggio affermativo 
-        return redirect()->back()->with('message', 'sicuro di aver preso la decisione esatta?');
+        return redirect()->back()->with('message', 'Are you sure?');
     }
 
     public function rejectAnnouncement(Announcement $announcement)
@@ -37,7 +37,7 @@ class RevisorController extends Controller
         
         //reindiriziamo con un messaggio negativo
 
-        return redirect()->back()->with('message', 'annuncio rifiutato');
+        return redirect()->back()->with('message', 'Announcement declined');
     }
 
 
@@ -46,7 +46,7 @@ class RevisorController extends Controller
     {
        $announcement->is_accepted=null;          
         $announcement->save();
-        return redirect()->back()->with('message', 'annuncio recuperato');
+        return redirect()->back()->with('message', 'Announcement restored');
     }
 
 
@@ -59,7 +59,7 @@ class RevisorController extends Controller
         */
         Mail::to('prestodeluxe@example.com')->send(new BecomeRevisor(Auth::user()));
 
-        return redirect('/')->with(['message', 'Complimenti! Hai chiesto di diventare revisore correttamente']);
+        return redirect('/')->with(['message', 'Good job! You correctly ask to be a reviewer!']);
     }
 
     public function makeRevisor(User $user)
@@ -69,7 +69,7 @@ class RevisorController extends Controller
 
         // Richiamiamo il comando MakeUserRevisor di Commands\MakeUserRevisor che imposta a revisore l'utente 
         Artisan::call('PrestoDeluxe:MakeUserRevisor', ['email' => $user->email]);
-        return redirect('/')->with(['message', 'Complimenti! Sei diventato un revisore..Bravo']);
+        return redirect('/')->with(['message', 'Good job! You are a reviewer now!']);
     }
 
     

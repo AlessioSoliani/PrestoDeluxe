@@ -36,7 +36,7 @@ class CreateAnnouncement extends Component
 
     
         $this->formreset();
-        session()->flash('success','Annuncio creato con successo');
+        session()->flash('success','Announcement successfully created');
     }
 
     public function formreset(){
@@ -45,8 +45,6 @@ class CreateAnnouncement extends Component
         $this->price='';
         $this->category='';
     }
-
-
 
 
     public function render()

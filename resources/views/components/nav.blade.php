@@ -22,7 +22,7 @@
 
       <button  class=" offcanvas-nav text-center btn-offcanvas menu " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
-        Menù
+        Menu
         {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
 
       </button>
@@ -34,22 +34,22 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">tutte le categorie</a>
+              <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">All categories</a>
             </li>
 
             @auth
             <li class="nav-item">
-              <a class="nav-link" href="{{route('announcements.create')}}">inserisci un Nuovo annuncio</a>
+              <a class="nav-link" href="{{route('announcements.create')}}">Enter a new ad</a>
             </li>
 
             @if(Auth::user()->is_revisor)
             <!-- se l'utente è revisore vedrà la sezione Zona Revisore con il numero di annunci da revisionare -->
             <li class="nav-item">
-              <a class="nav-link" href="{{route('revisor.index')}}">Zona Revisore<br>
+              <a class="nav-link" href="{{route('revisor.index')}}">Reviewer dashboard<br>
                 <!-- numero di annunci da revisionare -->
                 <!-- toBeRevisionedCount funzione nel MOLDEL di announcements -->
               <span>{{App\Models\announcement::toBeRevisionedCount()}}
-                <span>Annunci da revisionare</span>
+                <span>Ads to be revisioned</span>
               </span>
             </a>
             </li>
@@ -74,7 +74,7 @@
           </li>
           <li class="nav-item  dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categorie
+              Categories
             </a>
 
             <ul class="dropdown-menu">

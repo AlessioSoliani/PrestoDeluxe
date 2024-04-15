@@ -3,7 +3,7 @@
     <div class="container mt-5 pt-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">
-                <h1 class=" display-3 text-center">{{$announcement_to_check ? "Deluxe da revisionare":"Non ci sono annunci da revisionare"}}</h1>
+                <h1 class=" display-3 text-center">{{$announcement_to_check ? "Deluxe to be revisoned":"There aren't announcements to be revisoned"}}</h1>
             </div>
         </div>
     </div>
@@ -45,9 +45,9 @@
                         </div>
                     </div>
                     <div class="text-center mt-5">
-                    <h5>Titolo: {{$announcement_to_check->title}}</h5>
-                    <p>Descrizione: {{$announcement_to_check->body}}</p>
-                    <p>Pubblicato il: {{$announcement_to_check->created_at->format('d/m/Y')}}</p>
+                    <h5>Title: {{$announcement_to_check->title}}</h5>
+                    <p>Description: {{$announcement_to_check->body}}</p>
+                    <p>date: {{$announcement_to_check->created_at->format('d/m/Y')}}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -55,12 +55,12 @@
                         <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-outline-warning" type="submit">Accetta</button>
+                            <button class="btn btn-outline-warning" type="submit">Accept</button>
                         </form>
                         <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-outline-danger" type="submit">Rifiuta</button>
+                            <button class="btn btn-outline-danger" type="submit">Reject</button>
                         </form>
                        
                     
@@ -79,8 +79,8 @@
                                         <form action="{{route('revisor.recover_announcement',$lastAnnouncement->id)}}" method="POST">
                                           @csrf
                                           @method('PATCH')
-                                          <button class="btn btn-outline-success" type="submit">Recupera</button>
-                                          <a href="{{route('welcome')}}" class="btn btn-outline-light" type="submit">Accetta</a>
+                                          <button class="btn btn-outline-success" type="submit">Recover</button>
+                                          <a href="{{route('welcome')}}" class="btn btn-outline-light" type="submit">Accept</a>
                                        </form> 
                                        
 

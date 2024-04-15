@@ -6,14 +6,14 @@
             <div class="col-6 text-center mt-5">
               @unless ($currentRoute == 'register'|| $currentRoute == 'login')
               {{-- $currentRoute == Auth::user()->'is_revisor' --}}
-              <h3>Registrati</h3>
-              <a class="btn btn-outline-warning" href="/register">clicca quì</a>
+              <h3>Register</h3>
+              <a class="btn btn-outline-warning" href="/register">click here</a>
             </div>
             {{-- @if (isset($currentRoute)) --}}
            
             <div class="col-6 text-center mt-5">
-              <h3>Diventa revisore</h3>
-              <a class="btn btn-outline-light" href="{{route('become.revisor')}}">clicca quì</a>
+              <h3>Become revisor</h3>
+              <a class="btn btn-outline-light" href="{{route('become.revisor')}}">click here</a>
           </div>
             @endunless
             {{-- @endif --}}

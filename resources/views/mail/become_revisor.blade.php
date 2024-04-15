@@ -8,12 +8,12 @@
 </head>
 <body>
     <div>
-        <h1>Grazie per aver chiesto di lavorare con noi</h1>
-        <h2>Ecco i suoi dati: </h2>
-        <p>Nome : {{$user->name}}</p>
+        <h1>Thank you for contacting us</h1>
+        <h2>Your information: </h2>
+        <p>Name : {{$user->name}}</p>
         <p>Email :{{$user->email}}</p>
-        <p>Se vuoi renderlo revisore clicca qui</p>
-        <a href="{{route('make.revisor',compact('user'))}}">Rendi Revisore</a>
+        <p>do you want to make it revising? click here</p>
+        <a href="{{route('make.revisor',compact('user'))}}">Confirm request</a>
     </div>
         
     

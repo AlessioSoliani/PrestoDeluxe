@@ -1,13 +1,13 @@
 <x-main>
 <div class="deluxe">
-  <h1 class='text-center display-1 mt-5 deluxe'>Accedi</h1>
+  <h1 class='text-center display-1 mt-5 deluxe'>Sign in</h1>
    <div class="container">
          <div class="row justify-content-center">
            <div class="col-12 col-md-4">
                <form method="POST" action="/login">
                    @csrf                      
                       <div class="mb-3">
-                        <label class="form-label">Indirizzo Email</label>
+                        <label class="form-label">Email adress</label>
                         <input type="email" class="form-control" name="email"  value="{{old('email')}}">
                       </div>
                      @error('email')
@@ -25,7 +25,7 @@
                        <input type="checkbox" class="form-check-input" >
                     </div>
                     <div class="d-flex justify-content-center">
-                      <button type="submit" class="btn btn-outline-warning">Submit</button>
+                      <button type="submit" class="btn btn-outline-warning">Send</button>
                     </div>   
                </form>
            </div>

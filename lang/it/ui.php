@@ -1,0 +1,38 @@
+<?php
+
+return [
+    'allCategories'=>'Tutte le categorie',
+    'enterNewAdd'=>'Inserisci un nuovo annuncio',
+    'dashboard'=>'Dashboard',
+    'announcementsToBeRevised'=>'Annunci da revisionare',
+    'logout'=>'Esci',
+    'login'=>'Accedi',
+    'register'=>'Registrati',
+    'categories'=>'Categorie',
+    'search'=>'Cerca',
+    'yacht'=>'Yacht',
+    'superCars'=>'Supercars',
+    'wines'=>'Vini',
+    'cigars'=>'Sigari',
+    'watches'=>'Orologi',
+    'jewels'=>'Gioielli',
+    'artWorks'=>'Opere d\'arte',
+    'jets'=>'Aerei deluxe',
+    'motorbikes'=>'Motociclette',
+    'high-fashion'=>'Alta moda',
+    'date'=>'Data',
+    'show'=>'Vedi',
+    'clickHere'=>'Clicca qui',
+    'title'=>'Titolo',
+    'leaveYourDescription'=>'Lascia la tua descrizione',
+    'category'=>'Categoria',
+    'chooseCategory'=>'Scegli la categoria',
+    'price'=>'Prezzo',
+    'submit'=>'Crea',
+    'announcementDeclined'=>'Annuncio rifiutato',
+    'announcementRestored'=>'Annuncio recuperato',
+    'goodJob'=>'Complimenti la tua richiestra di diventare revisore è stata inviata',
+    'goodJobReviewer'=>'Complimenti ora sei un revisore',
+
+    
+];
