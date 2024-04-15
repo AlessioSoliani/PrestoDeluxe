@@ -21,9 +21,9 @@
         </li>
 
       <button  class=" offcanvas-nav text-center btn-offcanvas menu " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt="">
+        {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
         Menù
-        <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt="">
+        {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
 
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
