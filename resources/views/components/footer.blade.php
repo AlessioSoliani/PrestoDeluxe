@@ -4,7 +4,8 @@
     <div class="container justify-content-center">
         <div class="row justify-content-center">
             <div class="col-6 text-center mt-5">
-              @unless ($currentRoute == 'register'| $currentRoute == 'login')
+              @unless ($currentRoute == 'register'|| $currentRoute == 'login')
+              {{-- $currentRoute == Auth::user()->'is_revisor' --}}
               <h3>Registrati</h3>
               <a class="btn btn-outline-warning" href="/register">clicca quì</a>
             </div>
