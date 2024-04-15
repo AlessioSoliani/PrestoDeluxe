@@ -25,6 +25,15 @@ class PageController extends Controller
         $announcements = Announcement::search($request->searched)->where('is_accepted',true)->paginate(10);
         return view ('announcements.index', compact('announcements'));
     }
+
+    public function setLanguage($lang){
+        dd($lang);
+        session()->put('locale', $lang);
+        return redirect()->back();
+    }
+
+
+
 }
 
 //   

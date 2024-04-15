@@ -8,6 +8,17 @@
           {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
         </div>
 
+        <li class="nav-item">
+          <x-_locale lang='it' nation='it'/>
+        </li>
+
+        <li class="nav-item">
+          <x-_locale lang='en' nation='gb'/>
+        </li>
+
+        <li class="nav-item">
+          <x-_locale lang='es' nation='es'/>
+        </li>
 
       <button  class=" offcanvas-nav text-center btn-offcanvas menu " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt="">
