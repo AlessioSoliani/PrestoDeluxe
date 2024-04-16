@@ -81,7 +81,9 @@ return [
      'Accept'=>'Accetta',
      'Reject'=>'Rifiuta',
      'Recover'=>'Recupera',
-     'DeluxeToBeRevisoned'=>'deluxe anuncios para revisar',
+     'DeluxeToBeRevisoned'=>'Annunci deluxe da revisionare',
+     'ThereAreNoAnnouncementsToBeRevisoned'=>'non ci sono annunci da revisionare',
+
      //endRevisorIndex
      //categoryShow
      'ThereAreNoAnnouncementsInThisCategory'=>'Non ci sono annunci in questa categoria',

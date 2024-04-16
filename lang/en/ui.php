@@ -85,6 +85,8 @@ return [
      'Reject'=>'Reject',
      'Recover'=>'Recover',
      'DeluxeToBeRevisoned'=>'Deluxe to be revisoned',
+     'ThereAreNoAnnouncementsToBeRevisoned'=>'There are no announcements to be revisoned',
+
      //endRevisorIndex
      //categoryShow
      'ThereAreNoAnnouncementsInThisCategory'=>'There Are No Announcements In This Category',
