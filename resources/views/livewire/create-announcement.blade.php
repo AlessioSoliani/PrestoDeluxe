@@ -1,8 +1,8 @@
 <div>
-    <h1 class=" mt-5 text-center">Create Announcement</h1>
+    <h1 class=" mt-5 text-center">{{__('ui.CreateAnnouncement')}}</h1>
     <form wire:submit.prevent="store">
         <div class="mb-3">
-            <label class="form-label">Title</label>
+            <label class="form-label">{{__('ui.Title')}}</label>
             <input type="text" class="form-control  @error('title') is-invalid @enderror" wire:model.change='title'>           
             @error('title')
             <span>{{$message}}</span>            
@@ -11,7 +11,7 @@
 
           <div class="form-floating">
             <textarea class="form-control  @error('body') is-invalid @enderror" wire:model.change='body' placeholder="Inserisci la descrizione">Description</textarea>
-            <label for="floatingTextarea">Leave your description</label>
+            <label for="floatingTextarea">{{__('ui.LeaveYourDescription')}}</label>
             @error('body')
             <div>{{$message}}</div>
            @enderror
@@ -19,12 +19,12 @@
 
 
           <div class="mb-3 mt-3">
-            <label for="category">Categories</label>
+            <label for="category">{{__('ui.Categories')}}</label>
             <select class=" mt-3 mb-3 border border-warning rounded-2 form-select" wire:model.defer="category">
-                <option>choose category</option>
+                <option>{{__('ui.chooseCategory')}}</option>
                 @foreach ($categories as $category )
                    <option 
-                    value="{{$category->id}}">{{$category->name}}
+                    value="{{$category->id}}">{{__('ui.'.$category->name)}}
                    </option>                        
                 @endforeach                    
               </select>
@@ -32,7 +32,7 @@
           
 
           <div class="mb-3">
-            <label class="form-label">Price</label>
+            <label class="form-label">{{__('ui.Price')}}</label>
             <input type="number" class="form-control  @error('price') is-invalid @enderror"  wire:model.change='price'>           
             @error('price')
             <span>{{$message}}</span>            
@@ -40,7 +40,7 @@
           </div>     
        
        <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-outline-warning">Send</button>
+        <button type="submit" class="btn btn-outline-warning">{{__('ui.Send')}}</button>
 
        </div>
     </form>

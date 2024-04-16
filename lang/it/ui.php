@@ -61,7 +61,33 @@ return [
     //endRegister
     'hello'=>'ciao',
     'WelcomeToYourDeluxeArea'=>'Benvenuto nella tua deluxe area',
-
-
+    'becomeRevisor'=>'diventa revisore',
+    //create announcement
+    'CreateAnnouncement'=>'crea un annuncio',
+    'Title'=>'titolo',
+    'LeaveYourDescription'=>'descrizione',
+    'chooseCategory'=>'categoria',
+    'Price'=>'prezzo',
+    'Send'=>'invia',
+    //endCreateAnnouncement
+    //become revisor
+    'TheUserSentaRequestToBecomeAnAuditor'=>'Questo utente ha inviato una richiesta per diventare revisore',
+    'UserInformation'=>'le sue informazioni',
+    'DoYouWantToAcceptHisRequestToBecomeAnAuditor'=>'Vuoi accettare la sua richiesta?',
+    'ConfirmRequest'=>'Conferma',
+    //endBecome revisor
+     //revisorIndex
+     'Description'=>'Descrizione',
+     'Accept'=>'Accetta',
+     'Reject'=>'Rifiuta',
+     'Recover'=>'Recupera',
+     'DeluxeToBeRevisoned'=>'deluxe anuncios para revisar',
+     //endRevisorIndex
+     //categoryShow
+     'ThereAreNoAnnouncementsInThisCategory'=>'Non ci sono annunci in questa categoria',
+     'CreateOne'=>'Creane uno',
+     'CreateYourAnnouncement'=>'Crea il tuo annuncio',
+     //endcategoryShow
+ 
 
 ];

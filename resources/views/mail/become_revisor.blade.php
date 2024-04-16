@@ -8,12 +8,12 @@
 </head>
 <body>
     <div>
-        <h1>Thank you for contacting us</h1>
-        <h2>Your information: </h2>
-        <p>Name : {{$user->name}}</p>
-        <p>Email :{{$user->email}}</p>
-        <p>do you want to make it revising? click here</p>
-        <a href="{{route('make.revisor',compact('user'))}}">Confirm request</a>
+        <h1>{{__('ui.ThisUserSentaRequestToBecomeAnAuditor')}}</h1>
+        <h2>{{__('ui.UserInformation')}}: </h2>
+        <p>{{__('ui.Name')}} :{{$user->name}}</p>
+        <p>{{__('ui.EmailAdress')}} :{{$user->email}}</p>
+        <p>{{__('ui.DoYouWantToAcceptHisRequestToBecomeAnAuditor')}}</p>
+        <a href="{{route('make.revisor',compact('user'))}}">{{__('ui.ConfirmRequest')}}</a>
     </div>
         
     

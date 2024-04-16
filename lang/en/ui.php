@@ -62,9 +62,35 @@ return [
     //footer
     'hello'=>'hello',
     'WelcomeToYourDeluxeArea'=>'welcome to your deluxe area',
-    ''=>'',
+    'becomeRevisor'=>'become Revisor',
+     //create announcement
+     'CreateAnnouncement'=>'Create Announcement',
+     'Title'=>'Title',
+     'LeaveYourDescription'=>'Leave Your Description',
+     'chooseCategory'=>'choose Category',
+     'Price'=>'Price',
+     'Send'=>'Send',     
+    //endCreateAnnouncement
 
 
+    //become revisor
+    'TheUserSentaRequestToBecomeAnAuditor'=>'The user sent a request to become an ',
+    'UserInformation'=>'User information',
+    'DoYouWantToAcceptHisRequestToBecomeAnAuditor'=>'Do you want to accept his request to become an auditor?',
+    'ConfirmRequest'=>'Confirm request',
+    //endBecome revisor
+     //revisorIndex
+     'Description'=>'Description',
+     'Accept'=>'Accept',
+     'Reject'=>'Reject',
+     'Recover'=>'Recover',
+     'DeluxeToBeRevisoned'=>'Deluxe to be revisoned',
+     //endRevisorIndex
+     //categoryShow
+     'ThereAreNoAnnouncementsInThisCategory'=>'There Are No Announcements In This Category',
+     'CreateOne'=>'Create One',
+     'CreateYourAnnouncement'=>'Create Your Announcement',
+     //endcategoryShow
 
     
 ];

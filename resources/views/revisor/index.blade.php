@@ -43,9 +43,9 @@
                         </div>
                     </div>
                     <div class="text-center mt-5">
-                    <h5>Title: {{$announcement_to_check->title}}</h5>
-                    <p>Description: {{$announcement_to_check->body}}</p>
-                    <p>date: {{$announcement_to_check->created_at->format('d/m/Y')}}</p>
+                    <h5>{{__('ui.title')}}: {{$announcement_to_check->title}}</h5>
+                    <p>{{__('ui.Description')}}: {{$announcement_to_check->body}}</p>
+                    <p>{{__('ui.date')}}: {{$announcement_to_check->created_at->format('d/m/Y')}}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -53,12 +53,12 @@
                         <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-outline-warning" type="submit">Accept</button>
+                            <button class="btn btn-outline-warning" type="submit">{{__('ui.Accept')}}</button>
                         </form>
                         <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-outline-danger" type="submit">Reject</button>
+                            <button class="btn btn-outline-danger" type="submit">{{__('ui.Reject')}}</button>
                         </form>
                        
                     
@@ -77,8 +77,8 @@
                                         <form action="{{route('revisor.recover_announcement',$lastAnnouncement->id)}}" method="POST">
                                           @csrf
                                           @method('PATCH')
-                                          <a href="{{route('revisor.index')}}" class="btn btn-outline-success" type="submit">Recover</a>
-                                          <a href="{{route('revisor.index')}}" class="btn btn-outline-light" type="submit">Accept</a>
+                                          <a href="{{route('revisor.index')}}" class="btn btn-outline-success" type="submit">{{__('ui.Recover')}}</a>
+                                          <a href="{{route('revisor.index')}}" class="btn btn-outline-light" type="submit">{{__('ui.Reject')}}</a>
                                        </form>                                 
 
                                      @endif 
