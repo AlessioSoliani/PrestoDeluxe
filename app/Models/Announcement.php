@@ -3,6 +3,7 @@
 namespace App\Models;
 
 
+use App\Models\Image;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -47,5 +48,9 @@ class Announcement extends Model
         'category' => $category,
        ];
        return $array;
+    }
+
+    public function images(){
+        return $this->hasMany(Image::class);
     }
 }
