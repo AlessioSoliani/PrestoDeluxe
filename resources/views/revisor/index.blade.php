@@ -33,9 +33,7 @@
                                             <p class="caption"></p>
                                           </div>
                                         </div>
-                                        <button class="btn prev">  
-                                            <i class="fa-sharp fa-thin fa-arrow-right fa-fade">prev</i>
-                                        </button>
+                                        <button class="btn prev text-center">prev</button>
                                         <button class="btn next ">Next</button>
                                         <div class="dots"></div>
                                       </main>
@@ -79,10 +77,9 @@
                                         <form action="{{route('revisor.recover_announcement',$lastAnnouncement->id)}}" method="POST">
                                           @csrf
                                           @method('PATCH')
-                                          <button class="btn btn-outline-success" type="submit">Recover</button>
-                                          <a href="{{route('welcome')}}" class="btn btn-outline-light" type="submit">Accept</a>
-                                       </form> 
-                                       
+                                          <a href="{{route('revisor.index')}}" class="btn btn-outline-success" type="submit">Recover</a>
+                                          <a href="{{route('revisor.index')}}" class="btn btn-outline-light" type="submit">Accept</a>
+                                       </form>                                 
 
                                      @endif 
                                     </div>

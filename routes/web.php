@@ -39,8 +39,6 @@ Route::get('/richiesta/revisore',[RevisorController::class,'becomeRevisor'])->mi
 // rotta della mail, per rendere un utente revisore
 Route::get('/rendi/revisore{user}',[RevisorController::class,'makeRevisor'])->name('make.revisor');
 
-
-
 Route::get('/ricerca/annuncio',[PageController::class,'searchAnnouncements'])->name('announcements.search');
 
 Route::post('/lingua/{lang}', [PageController::class, 'setLanguage'])->name('set_language_locale');

@@ -41,11 +41,11 @@
         <section class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8">
-                    <h3>Titolo:{{$announcement->title}}</h3>
-                    <h6>Descrizione:{{$announcement->body}}</h6>
-                    <h4>prezzo:{{$announcement->price}}</h4>
-                    <a href="{{route('categoryShow',['category'=>$announcement->category])}}">Categoria:{{$announcement->category->name}}</a>
-                    <p>Publicato il:{{$announcement->created_at->format('d/m/Y')}} -Autore{{$annunciement->user->name ?? ''}}</p>
+                    <h3>{{__('ui.title')}}:{{$announcement->title}}</h3>
+                    <h6>{{__('ui.leaveYourDescription')}}:{{$announcement->body}}</h6>
+                    <h4>{{__('ui.price')}}:{{$announcement->price}}</h4>
+                    <a href="{{route('categoryShow',['category'=>$announcement->category])}}">{{__('ui.category')}}:{{__('ui.'.$announcement->category->name)}}</a>
+                    <p>{{__('ui.date')}}:{{$announcement->created_at->format('d/m/Y')}} {{__('ui.author')}}:{{$annunciement->user->name ?? ''}}</p>
                 </div>
             </div>
         </section>

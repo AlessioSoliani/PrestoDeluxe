@@ -7,8 +7,8 @@
 
            @if(!Auth::check())  
            <div>
-            <h3>Registrati</h3>
-            <a class="btn btn-outline-warning" href="/register">clicca quì</a>
+            <h3>{{__('ui.register')}}</h3>
+            <a class="btn btn-outline-warning" href="/register">{{__('ui.clickHere')}}</a>
           </div>                           
               
             @elseif((Auth::user() && Auth::user()->is_revisor))
@@ -37,8 +37,7 @@
         <!-- Facebook -->
         <a
           data-mdb-ripple-init
-          class="btn text-white btn-floating m-1"
-          {{-- style="background-color: #3b5998;" --}}
+          class="btn text-white btn-floating m-1"          
           href="#!"
           role="button"          
           ><img class="img_logo" src="http://127.0.0.1:8000/facebook.png" alt="">
@@ -48,7 +47,6 @@
         <a
           data-mdb-ripple-init
           class="btn text-white btn-floating m-1"
-          {{-- style="background-color: #55acee;" --}}
           href="#!"
           role="button"
           ><img class="img_logo" src="http://127.0.0.1:8000/X_twitter.png" alt="">
@@ -58,28 +56,16 @@
         <a
           data-mdb-ripple-init
           class="btn text-white btn-floating m-1"
-          {{-- style="background-color: #dd4b39;" --}}
           href="#!"
           role="button"
           ><img class="img_logo" src="http://127.0.0.1:8000/instagram.png" alt="">
-
         </a>
   
-        {{-- <!-- Instagram -->
-        <a
-          data-mdb-ripple-init
-          class="btn text-white btn-floating m-1"
-          style="background-color: #ac2bac;"
-          href="#!"
-          role="button"
-          >
-        </a> --}}
   
         <!-- Linkedin -->
         <a
           data-mdb-ripple-init
           class="btn text-white btn-floating m-1"
-          {{-- style="background-color: #0082ca;" --}}
           href="#!"
           role="button"
           ><img class="img_logo" src="http://127.0.0.1:8000/linkedin.png" alt="">
@@ -88,7 +74,6 @@
         <a
           data-mdb-ripple-init
           class="btn text-white btn-floating m-1"
-          {{-- style="background-color: #333333;" --}}
           href="#!"
           role="button"
           ><img class="img_logo" src="http://127.0.0.1:8000/TikTok.png" alt="">

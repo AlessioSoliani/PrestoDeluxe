@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->timestamps();
         });
-        $categories=['yacths','supercars','wines','cigars','watches','jewels','artworks','jets','motorbikes','high-fashion'];
+        $categories=['yachts','supercars','wines','cigars','watches','jewels','artworks','jets','motorbikes','high-fashion'];
         foreach($categories as $category){
             Category::create(['name'=> $category]);
         }

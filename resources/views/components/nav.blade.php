@@ -21,10 +21,8 @@
         </li>
 
       <button  class=" offcanvas-nav text-center btn-offcanvas menu " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
-        Menu
-        {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
-
+       {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt="">  --}}
+        Menu   
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
@@ -34,22 +32,22 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">All categories</a>
+              <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">{{__('ui.allCategories')}}</a>
             </li>
 
             @auth
             <li class="nav-item">
-              <a class="nav-link" href="{{route('announcements.create')}}">Enter a new ad</a>
+              <a class="nav-link" href="{{route('announcements.create')}}">{{__('ui.enterNewAd')}}</a>
             </li>
 
             @if(Auth::user()->is_revisor)
             <!-- se l'utente è revisore vedrà la sezione Zona Revisore con il numero di annunci da revisionare -->
             <li class="nav-item">
-              <a class="nav-link" href="{{route('revisor.index')}}">Reviewer dashboard<br>
+              <a class="nav-link" href="{{route('revisor.index')}}">{{__('ui.dashboard')}}<br>
                 <!-- numero di annunci da revisionare -->
                 <!-- toBeRevisionedCount funzione nel MOLDEL di announcements -->
               <span>{{App\Models\announcement::toBeRevisionedCount()}}
-                <span>Ads to be revisioned</span>
+                <span>{{__('ui.announcementsToBeRevised')}}</span>
               </span>
             </a>
             </li>
@@ -65,7 +63,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#" onclick="event.preventDefault();
               document.getElementById('form-logout').submit();
-              ">logout</a>
+              ">>{{__('ui.logout')}}</a>
               <form method="POST" action="/logout" id="form-logout">
               @csrf
               </form>
@@ -74,12 +72,12 @@
           </li>
           <li class="nav-item  dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categories
+              {{__('ui.categories')}}
             </a>
 
             <ul class="dropdown-menu">
               @foreach($categories as $category )
-              <li><a class="dropdown-item" href="{{route('categoryShow',compact('category'))}}">{{$category->name}}</a></li>
+              <li><a class="dropdown-item" href="{{route('categoryShow',compact('category'))}}">{{__('ui.'.$category->name)}}</a></li>
                 <hr class="dropdown-divider">
               </li>
               @endforeach
@@ -88,16 +86,16 @@
         </ul>
           @else
           <li class="nav-item deluxe-style">
-            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/login">{{__('ui.login')}}</a>
           </li>
           <li class="nav-item deluxe-style">
-            <a class="nav-link" href="/register">Register</a>
+            <a class="nav-link" href="/register">{{__('ui.register')}}</a>
           </li>
           @endauth
 
           <form class="d-flex mt-3" role="search" action="{{route('announcements.search')}}" method="GET">
             <input class="form-control me-2" type="search" name="searched" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-warning"  type="submit">Search</button>
+            <button class="btn btn-outline-warning"  type="submit">{{__('ui.search')}}</button>
           </form>
 
         </div>
