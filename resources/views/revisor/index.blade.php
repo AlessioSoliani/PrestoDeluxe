@@ -3,7 +3,7 @@
     <div class="container mt-5 pt-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">
-                <h1 class=" display-3 text-center">{{$announcement_to_check ? {{__('ui.DeluxeToBeRevisoned')}}:{{__('ui.ThereAreNoAnnouncementsToBeRevisoned')}}}}</h1>
+                <h1 class=" display-3 text-center">{{$announcement_to_check ? __('ui.DeluxeToBeRevisoned'):__('ui.ThereAreNoAnnouncementsToBeRevisoned')}}</h1>
             </div>
         </div>
     </div>
