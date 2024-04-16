@@ -3,18 +3,29 @@
 
     <div class="container justify-content-center">
         <div class="row justify-content-center">
-            <div class="col-6 text-center mt-5">
-              @unless ($currentRoute == 'register'|| $currentRoute == 'login')
-              <h3>Registrati</h3>
-              <a class="btn btn-outline-warning" href="/register">clicca quì</a>
+            <div class="col-12 text-center mt-5">           
+
+           @if(!Auth::check())  
+           <div>
+            <h3>Registrati</h3>
+            <a class="btn btn-outline-warning" href="/register">clicca quì</a>
+          </div>                           
+              
+            @elseif((Auth::user() && Auth::user()->is_revisor))
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  hello {{auth()->user()->name}} welcome to your deluxe area                
+                </div>  
+                </div>
+              </div>
             </div>
-           
-            <div class="col-6 text-center mt-5">
+            @else
+            <div class="col-12 text-center mt-5">
               <h3>Diventa revisore</h3>
               <a class="btn btn-outline-light" href="{{route('become.revisor')}}">clicca quì</a>
-          </div>
-            @endunless
-            
+            </div>
+            @endif
         </div>
     </div>
 
