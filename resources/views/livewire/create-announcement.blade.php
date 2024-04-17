@@ -39,11 +39,8 @@
             @enderror
           </div>
 
-       <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-outline-light lenguages">{{__('ui.Send')}}</button>
 
-    </div>
-</form>
+
 
 @if (session()->has('success'))
 <div class="w-100 rounded  text-center display-6 mt-5" role="alert">
@@ -63,16 +60,21 @@
 <div class="row">
     <div class="col-12">
         <p>Photo Preview:</p>
-        <div class="">
+        <div class="row border border-4 border-info rounded shadow py-4">
             @foreach($images as $key=>$image)
             <div class=" col my-3">
                 <div class="img-preview mx-auto shadow rounded" style = "background-image:url({{$image->temporaryUrl()}})">
                 </div>
-                <button wire:click = "removeImage({{$key}})">Delete</button>
+                <button type="button" wire:click = "removeImage({{$key}})">Delete</button>
             </div>
             @endforeach
         </div>
     </div>
 </div>
+@endif
+<div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-outline-light lenguages">{{__('ui.Send')}}</button>
+</div>
+</form>
 </div>
 

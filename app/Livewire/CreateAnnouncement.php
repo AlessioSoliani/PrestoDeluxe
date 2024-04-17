@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Livewire;
-
+use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Validation\Rule;
 class CreateAnnouncement extends Component
 {
     use WithFileUploads;
@@ -21,17 +21,22 @@ class CreateAnnouncement extends Component
     public $price;
     #[Validate('required')]
     public $category;
-    #[Validate('image.*|max:1024')]
+    //#[Validate('images.*|max:1024')]
     public $images = [];
-    #[Validate('temporary_image.*|max:1024')]
+    //#[Validate('temporary_images.*|max:1024')]
     public $temporary_images;
     public $image;
+    protected $rules = [
+        'images.*' => 'required|image|max:1024',
+        'temporary_images.*'=>'required|image|max:1024',
+    ];
     protected $message = [
-    'temporary_images:required'=> 'l\'immagine è richiesta',
-    'temporary_images.*.image'=> 'l\'immagine di massimo 1mb',
-    'images.image'=>'l\'immagine massimo un mb',
-    'images.max'=>'l\'immagine un mb',
-    'temporary_images.*.max'=>'l\'immagine deve essere massimo di 1mb',
+        'temporary_images.*.required'=> 'l\'immagine è richiesta',
+        'temporary_images.*.image'=> 'l\'immagine di massimo 1mb',
+        'images.image'=>'l\'immagine massimo un mb',
+        'images.max'=>'l\'immagine un mb',
+        'images.required'=>'l\'immagine è richiesta',
+        'temporary_images.*.max'=>'l\'immagine deve essere massimo di 1mb',
     ];
 
     public function store(){
@@ -46,8 +51,19 @@ class CreateAnnouncement extends Component
             'price'=>$this->price,
         ]);
 
+        //$this->validate();
+        $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
+
+        if(count($this->images)){
+            foreach($this->images as $image){
+                $this->announcement->image()->create(['path'=>$image->store('images','public')]);
+            }
+        }
+
         Auth::user()->announcements()->save($announcement);
 
+        session()->flash('message','il messaggio che ci pare');
+        $this->cleanForm();
 
         $this->formreset();
         session()->flash('success','Announcement successfully created');
@@ -60,7 +76,6 @@ class CreateAnnouncement extends Component
         $this->category='';
     }
 
-
     public function render()
     {
         return view('livewire.create-announcement');
@@ -69,13 +84,16 @@ class CreateAnnouncement extends Component
     public function updatedTemporaryImages(){
         if($this->validate([
             'temporary_images.*'=>'image|max:1024',
-        ])){
-            foreach($this->temporary_images as $image){
-                $this->images[] = $image;
+            ])){
+                foreach($this->temporary_images as $image){
+                    $this->images[] = $image;
+                }
             }
         }
 
-
-
+        public function removeImage($key){
+            if(in_array($key, array_keys($this->images))){
+                unset($this->images[$key]);
+            }
+        }
     }
-}
