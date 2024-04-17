@@ -64,10 +64,22 @@ class CreateAnnouncement extends Component
 
         session()->flash('message','il messaggio che ci pare');
         $this->cleanForm();
+    }
+
+        public function cleanForm(){
+            $this->title='';
+            $this->body='';
+            $this->price='';
+            $this->category='';
+            $this->image='';
+            $this->images = [];
+            $this->temporary_images = [];
+            $this->form_id = rand();
+
 
         $this->formreset();
         session()->flash('success','Announcement successfully created');
-    }
+        }
 
     public function formreset(){
         $this->title='';
@@ -75,6 +87,7 @@ class CreateAnnouncement extends Component
         $this->price='';
         $this->category='';
     }
+
 
     public function render()
     {
