@@ -27,8 +27,8 @@
                     <li class="text-center list-group-item "> data:{{$announcement->created_at->format('d/m/Y')}}</li>
                 </ul>
                 <div class=" d-flex justify-content-around card-body mb-3">
-                      <a class="btn btn-outline-warning" href="{{route('announcements.show', compact('announcement'))}}">{{__('ui.show')}}</a>
-                      <a class="btn btn-outline-light" href="{{route('categoryShow', ['category'=>$announcement->category])}}">{{__('ui.'.$announcement->category->name)}}</a>
+                      <a class="btn btn-outline-light lenguages" href="{{route('announcements.show', compact('announcement'))}}">{{__('ui.show')}}</a>
+                      <a class="btn btn-outline-light lenguages" href="{{route('categoryShow', ['category'=>$announcement->category])}}">{{__('ui.'.$announcement->category->name)}}</a>
                 </div>
             </div>
                 {{-- {{$announcements->links()}} --}}

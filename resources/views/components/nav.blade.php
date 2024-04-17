@@ -1,4 +1,4 @@
-<nav class="navbar bg-body-tertiary fixed-top">
+<nav class="navbar list-unstyled bg-body-tertiary fixed-top">
     <div class=" d-flex justify-content-between container-fluid">
 
 
@@ -8,26 +8,33 @@
           {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
         </div>
 
-        <li class="nav-item">
-          <x-_locale lang='it' nation='it'/>
-        </li>
+       
 
-        <li class="nav-item">
-          <x-_locale lang='en' nation='gb'/>
-        </li>
-
-        <li class="nav-item">
-          <x-_locale lang='es' nation='es'/>
-        </li>
-
-      <button  class=" offcanvas-nav text-center btn-offcanvas menu " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <button  class="offcanvas-nav text-center btn-offcanvas menu " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
        {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt="">  --}}
         Menu   
       </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <div class="offcanvas styleColor offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="ms-5 d-flex justify-content-start offcanvas-header">
+          {{-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5> --}}
+          <div class=" dropend dropdown me-1">
+            <button type="button" class="btn btn-outline-light lenguages dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+              {{__('ui.languages')}}
+            </button>
+            <ul class=" lenguages styleColor dropdown-menu">
+              <li class=" mx-5 nav-item">
+                <x-_locale lang='it' nation='italiano'/>
+              </li>
+      
+              <li class=" mx-5 nav-item">
+                <x-_locale lang='en' nation='english'/>
+              </li>
+      
+              <li class=" mx-5 nav-item">
+                <x-_locale lang='es' nation='espaniol'/>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -54,7 +61,7 @@
 
             @endif
 
-          <li class=" nav-item dropdown">
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               {{auth()->user()->name}}
 
@@ -75,7 +82,7 @@
               {{__('ui.categories')}}
             </a>
 
-            <ul class="dropdown-menu">
+            <ul class=" border border-dark dropdown-menu">
               @foreach($categories as $category )
               <li><a class="dropdown-item" href="{{route('categoryShow',compact('category'))}}">{{__('ui.'.$category->name)}}</a></li>
                 <hr class="dropdown-divider">
@@ -89,13 +96,13 @@
             <a class="nav-link" href="/login">{{__('ui.login')}}</a>
           </li>
           <li class="nav-item deluxe-style">
-            <a class="nav-link" href="/register">{{__('ui.register')}}</a>
+            <a class="nav-link btn btn-outline-light lenguages" href="/register">{{__('ui.register')}}</a>
           </li>
           @endauth
 
           <form class="d-flex mt-3" role="search" action="{{route('announcements.search')}}" method="GET">
             <input class="form-control me-2" type="search" name="searched" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-warning"  type="submit">{{__('ui.search')}}</button>
+            <button class="btn btn-outline-light lenguages"  type="submit">{{__('ui.search')}}</button>
           </form>
 
         </div>

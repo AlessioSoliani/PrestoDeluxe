@@ -2,6 +2,7 @@
 
 return [
     //nav
+    'languages'=>' otros idiomas',
     'allCategories'=>'Todas las categorías',
     'enterNewAd'=>'Insertar un nuevo anuncio',
     'dashboard'=>'Panel',

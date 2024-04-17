@@ -25,6 +25,13 @@ hr{
     height: 100vh;
 } */
 
+.styleColor{
+  background: #16222A;
+  background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
+  background: linear-gradient(59deg, #3A6073, #16222A);
+  color: white;
+}
+
 .bgr-primary{
     background-color: rgb(33, 37, 41);
 }
@@ -51,13 +58,26 @@ hr{
 
 
 nav{
+  background: #16222A;
+  background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
+  background: linear-gradient(59deg, #3A6073, #16222A);
+  color: white;
     height: 80px;
-
 }
 
+.lenguages{
+  border-radius: 0%;
+}
 .container-nav{
   display: flex;
   justify-content: end;
+}
+
+body{
+  background: #16222A;
+  background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
+  background: linear-gradient(59deg, #3A6073, #16222A);
+  color: white;
 }
 
 :focus-visible {

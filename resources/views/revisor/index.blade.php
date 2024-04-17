@@ -33,8 +33,8 @@
                                             <p class="caption"></p>
                                           </div>
                                         </div>
-                                        <button class="btn prev text-center">prev</button>
-                                        <button class="btn next ">Next</button>
+                                        <button class=" btn btn-outline-light lenguages btn prev text-center">prev</button>
+                                        <button class=" btn btn-outline-light lenguages btn next ">Next</button>
                                         <div class="dots"></div>
                                       </main>
                                 </ul>                 
@@ -53,12 +53,12 @@
                         <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-outline-warning" type="submit">{{__('ui.Accept')}}</button>
+                            <button class="btn btn-outline-light lenguages" type="submit">{{__('ui.Accept')}}</button>
                         </form>
                         <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-outline-danger" type="submit">{{__('ui.Reject')}}</button>
+                            <button class="btn btn-outline-danger lenguages" type="submit">{{__('ui.Reject')}}</button>
                         </form>
                        
                     
@@ -77,8 +77,8 @@
                                         <form action="{{route('revisor.recover_announcement',$lastAnnouncement->id)}}" method="POST">
                                           @csrf
                                           @method('PATCH')
-                                          <a href="{{route('revisor.index')}}" class="btn btn-outline-success" type="submit">{{__('ui.Recover')}}</a>
-                                          <a href="{{route('revisor.index')}}" class="btn btn-outline-light" type="submit">{{__('ui.Reject')}}</a>
+                                          <a href="{{route('revisor.index')}}" class="btn btn-outline-success languages" type="submit">{{__('ui.Recover')}}</a>
+                                          <a href="{{route('revisor.index')}}" class="btn btn-outline-light languages" type="submit">{{__('ui.Reject')}}</a>
                                        </form>                                 
 
                                      @endif 
