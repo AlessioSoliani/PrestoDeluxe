@@ -32,7 +32,7 @@
                         <input type="password" class="form-control" name="password_confirmation">
                      </div>
                      <div class="d-flex justify-content-center">
-                      <button type="submit" class="btn btn-outline-warning">{{__('ui.Send')}}</button>
+                      <button type="submit" class="btn btn-outline-light lenguages">{{__('ui.Send')}}</button>
                     </div>
                  </form>
             </div>

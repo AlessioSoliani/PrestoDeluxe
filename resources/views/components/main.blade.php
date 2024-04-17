@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/> --}}
     <title>Presto Deluxe</title>
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
@@ -19,7 +20,7 @@
     
     {{$slot}}
 
-    <x-footer></x-footer>
+    <x-footer/>
 
     <script src="https://kit.fontawesome.com/e67ed88741.js" crossorigin="anonymous"></script>
 </body>

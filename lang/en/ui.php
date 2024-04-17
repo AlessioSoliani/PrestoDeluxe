@@ -2,6 +2,7 @@
 
 return [
     //nav
+    'languages'=>'languages',
     'allCategories'=>'all categories',
     'enterNewAd'=>'enter new ad',
     'dashboard'=>'dashboard',

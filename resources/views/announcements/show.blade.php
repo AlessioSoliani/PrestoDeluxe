@@ -29,8 +29,8 @@
                                 <p class="caption">{{$announcement->body}}</p>
                               </div>
                             </div>
-                            <button class="btn prev">Prev</button>
-                            <button class="btn next">Next</button>
+                            <button class="btn btn-outline-light lenguages prev">Prev</button>
+                            <button class="btn btn-outline-light lenguages next">Next</button>
                             <div class="dots"></div>
                           </main>
                     </ul>                 
