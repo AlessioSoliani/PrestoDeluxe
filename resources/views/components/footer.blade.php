@@ -15,15 +15,15 @@
             <div class="container">
               <div class="row justify-content-center">
                 <div class="col-12">
-                  hello {{auth()->user()->name}} welcome to your deluxe area                
+                  {{__('ui.hello')}} {{auth()->user()->name}} {{__('ui.WelcomeToYourDeluxeArea')}}                
                 </div>  
                 </div>
               </div>
             </div>
             @else
             <div class="col-12 text-center mt-5">
-              <h3>Diventa revisore</h3>
-              <a class="btn btn-outline-light" href="{{route('become.revisor')}}">clicca quì</a>
+              <h3>{{__('ui.becomeRevisor')}}</h3>
+              <a class="btn btn-outline-light" href="{{route('become.revisor')}}">{{__('ui.clickHere')}}</a>
             </div>
             @endif
         </div>

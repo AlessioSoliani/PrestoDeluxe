@@ -61,6 +61,38 @@ return [
     //endRegister
     //footer
     'hello'=>'hola',
-
-
+    'WelcomeToYourDeluxeArea'=>'Bienvenido en tu área reservada',
+    'becomeRevisor'=>'¡conviértete en editor!',
+    //EndFooter
+    //create announcement
+    'CreateAnnouncement'=>'crea un anuncio',
+    'Title'=>'título',
+    'LeaveYourDescription'=>'deja una descripción',
+    'chooseCategory'=>'selecciona la categoría',
+    'Price'=>'precio',
+    'Send'=>'envia',
+    //endCreateAnnouncement
+    //become revisor
+    'TheUserSentaRequestToBecomeAnAuditor'=>'este usuario ha presentado una solicitud para ser auditor!',
+    'UserInformation'=>'información del usuario ',
+    'DoYouWantToAcceptHisRequestToBecomeAnAuditor'=>'¿Quieres aceptar su petición?',
+    'ConfirmRequest'=>'confirma',
+    //endBecome revisor
+    //revisorIndex
+    'Description'=>'descripción',
+    'Accept'=>'Acepta',
+    'Reject'=>'Recupera',
+    'DeluxeToBeRevisoned'=>'anuncios para revisar',
+    'ThereAreNoAnnouncementsToBeRevisoned'=>'no hay anuncios que revisar',
+    //endRevisorIndex
+    //categoryShow
+    'ThereAreNoAnnouncementsInThisCategory'=>'no hay anuncios en esta categoría',
+    'CreateOne'=>'Crea uno',
+    'CreateYourAnnouncement'=>'crea tu anuncio ',
+    //endcategoryShow
+    
 ];
+
+
+
+
