@@ -16,6 +16,15 @@
                     <div class="container ">
                         <div class="row">
                             <div class="col-12">
+                                @if($announcement_to_check->images)
+                                 <div>
+                                    @foreach ($announcement_to_check->images as $image)
+                                        <div class="@if ($loop->first)@endif">
+                                            <img src="{{Storage::url($image->path)}}" alt="">
+                                        </div>
+                                    @endforeach
+                                @endif
+                                 </div>
                                 <ul class="gallery">
                                     <main class="carousel-container">
                                         <div class="carousel">
@@ -68,6 +77,7 @@
             </div>
         </section>      
     @endif
+
                             @if (session()->has('message'))                         
                               <div class="conteiner ">
                                 <div class="row justify-content-center">

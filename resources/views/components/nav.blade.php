@@ -70,7 +70,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#" onclick="event.preventDefault();
               document.getElementById('form-logout').submit();
-              ">>{{__('ui.logout')}}</a>
+              ">{{__('ui.logout')}}</a>
               <form method="POST" action="/logout" id="form-logout">
               @csrf
               </form>

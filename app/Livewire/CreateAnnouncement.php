@@ -12,69 +12,101 @@ use Illuminate\Validation\Rule;
 class CreateAnnouncement extends Component
 {
     use WithFileUploads;
-
-    #[Validate('required|min:3|max:150')]
-    public $title;
-    #[Validate('required|min:8')]
-    public $body;
-    #[Validate('required|numeric')]
-    public $price;
-    #[Validate('required')]
-    public $category;
-    //#[Validate('images.*|max:1024')]
-    public $images = [];
-    //#[Validate('temporary_images.*|max:1024')]
-    public $temporary_images;
+     
+   
+    public $title;   
+    public $body;  
+    public $price;  
+    public $category_id;   
+    public $temporary_images;    
+    public $images = []; 
     public $image;
+    public $announcement;  
+
+
+
     protected $rules = [
-        'images.*' => 'required|image|max:1024',
-        'temporary_images.*'=>'required|image|max:1024',
+        'title'=>'required|min:3|max:150',
+        'body'=>'required|min:8',
+        'price'=>'required',
+        'category_id'=>'required',        
+        'images.*' => 'image|required|max:1024',
+        'temporary_images.*'=>'image|required|max:1024',
     ];
     protected $message = [
-        'temporary_images.*.required'=> 'l\'immagine è richiesta',
-        'temporary_images.*.image'=> 'l\'immagine di massimo 1mb',
-        'images.image'=>'l\'immagine massimo un mb',
-        'images.max'=>'l\'immagine un mb',
-        'images.required'=>'l\'immagine è richiesta',
-        'temporary_images.*.max'=>'l\'immagine deve essere massimo di 1mb',
+        'title'=> 'il titolo è neccessario',
+        'title'=> 'il titolo è troppo corto',
+        'title'=>'il titolo è troppo lungo',
+        'body'=>'la descrizione è neccessaria',
+        'body'=> 'la descrizione è troppo corta',
+        'price'=>'il prezzo è fondamentale',        
+        'temporary_images.required'=> 'l\'immagine è richiesta',
+        'temporary_images.*.image'=> 'I file devono essere immagini',
+        'temporary_images.*.max'=> 'l\'immagine deve essere di massimo 1mb',
+        'images.*.max'=>'l\'immagine deve essere di massimo 1mb',
+        'images.*.required'=>'carica almeno un\'immagine',
     ];
+
+    public function updatedTemporaryImages()
+    {         
+        if($this->validate([//validazione di temporary_images se supera la validazione 
+            'temporary_images.*'=>'image|max:1024',
+            ])){
+                foreach($this->temporary_images as $image){
+                    //la aggiunge all'array images[]
+                    $this->images[] = $image;
+                }
+            }
+    }
+
+
+    //funzione per rimuovere le immagini che si attiva al click del bottone cancella nel richiamo
+        //wire:click della vista create-announcement, tramite $key che rappresenta l'indice nell'array images
+        //dell'immagine da rimuovere
+        public function removeImage($key){
+            if(in_array($key, array_keys($this->images))){
+                unset($this->images[$key]);
+            }
+        }
 
     public function store(){
         $this->validate();
-        //salviamo il record della categoria attraverso il metodo find:
-        $category = Category::find($this->category);
+        // dd($this);
+        // salviamo il record della categoria attraverso il metodo find:
+        $category = Category::find($this->category_id);
+        // dd($category->announcements());
         //tramite la variabile che contiene l'oggetto category sfruttiamo la relazione 1aN dichiarata nel modello
         //per far si che si colleghi agli annunci che qualsiasi utente creerà.
-        $announcement = $category->announcements()->create([//sfruttiamo l'assegnazione di massa con il metodo create per inserire i valori che l'utente compilerà nel form
+        $this->announcement = $category->announcements()->create([//sfruttiamo l'assegnazione di massa con il metodo create per inserire i valori che l'utente compilerà nel form
             'title'=>$this->title,
             'body'=>$this->body,
             'price'=>$this->price,
         ]);
-
-        //$this->validate();
-        $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
+        //quì ripetuto il codice che prima era nel public render
+        // //$this->validate();
+        // $this->announcement = Category::find($this->category_id)->announcements()->create($this->validate());
 
         if(count($this->images)){
             foreach($this->images as $image){
-                $this->announcement->image()->create(['path'=>$image->store('images','public')]);
+                $this->announcement->images()->create(['path'=>$image->store('images','public')]);
             }
         }
-
-        Auth::user()->announcements()->save($announcement);
-
-        session()->flash('message','il messaggio che ci pare');
+        session()->flash('message','articolo creato con successo');
         $this->cleanForm();
+
+        // Auth::user()->announcements()->save($announcement);
+
+        
     }
 
         public function cleanForm(){
             $this->title='';
             $this->body='';
             $this->price='';
-            $this->category='';
-            $this->image='';
+            $this->category_id='';
             $this->images = [];
             $this->temporary_images = [];
-            $this->form_id = rand();
+           
 
 
         $this->formreset();
@@ -85,7 +117,7 @@ class CreateAnnouncement extends Component
         $this->title='';
         $this->body='';
         $this->price='';
-        $this->category='';
+        $this->category_id='';
     }
 
 
@@ -93,20 +125,7 @@ class CreateAnnouncement extends Component
     {
         return view('livewire.create-announcement');
     }
-
-    public function updatedTemporaryImages(){
-        if($this->validate([
-            'temporary_images.*'=>'image|max:1024',
-            ])){
-                foreach($this->temporary_images as $image){
-                    $this->images[] = $image;
-                }
-            }
-        }
-
-        public function removeImage($key){
-            if(in_array($key, array_keys($this->images))){
-                unset($this->images[$key]);
-            }
-        }
+   
+   
+        
     }

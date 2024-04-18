@@ -12,15 +12,20 @@ class Announcement extends Model
 {
     use HasFactory, Searchable;
     protected $fillable=['title','body','price'];
-
+    //relazione one to many un annuncio per più utenti
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+        //relazione one to many un annuncio può avere una categoria
 
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+    //relazione one to many un annuncio può avere più immagini
+    public function images(){
+        return $this->hasMany(Image::class);
     }
   //funzione dove settiamo l'accettazione dell'annuncio in un valore null e che prenderà valore true o false in base all'accettazione o il rifiuto
     public function setAccepted($value){
@@ -50,7 +55,5 @@ class Announcement extends Model
        return $array;
     }
 
-    public function images(){
-        return $this->hasMany(Image::class);
-    }
+   
 }
