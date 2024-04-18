@@ -13,27 +13,36 @@
         <section class=" mt-5container">
             <div class="row">
                 <div class="col-12">
-                    <ul class="gallery">
-                        <main class="carousel-container">
-                            <div class="carousel">
-                              <div class="item active">
-                                <img src="https://bit.ly/34xczKy" alt="Image 1" />
-                                <p class="caption">{{$announcement->body}}</p>
-                              </div>
-                              <div class="item">
-                                <img src="https://bit.ly/3lkp5DW" alt="Image 2" />
-                                <p class="caption">{{$announcement->body}}</p>
-                              </div>
-                              <div class="item">
-                                <img src="https://bit.ly/3iMHuI1" alt="Image 3" />
-                                <p class="caption">{{$announcement->body}}</p>
-                              </div>
-                            </div>
-                            <button class="btn btn-outline-light lenguages prev">Prev</button>
-                            <button class="btn btn-outline-light lenguages next">Next</button>
-                            <div class="dots"></div>
-                          </main>
-                    </ul>                 
+                                            
+                      <ul class="gallery">                 
+                           <main class="carousel-container">                                                      
+                               <div class="carousel">
+                                  @if($announcement->images)
+                                  @foreach ($announcement->images as $image)
+                                  <div class=" carousel-item @if ($loop->first) active @endif">
+                                      <img src="{{Storage::url($image->path)}}" alt="">
+                                  </div>
+                                  @endforeach
+                                  @endif
+                                   <div class="item active">
+                                      <!-- annuncio da revisionare  -->
+                                      <img src="" alt="Image 1" />
+                                      <p class="caption"></p>
+                                   </div>
+                                   <div class="item">
+                                      <img src="" alt="Image 2" />
+                                      <p class="caption"></p>
+                                   </div>
+                                   <div class="item">
+                                      <img src="" alt="Image 3" />
+                                      <p class="caption"></p>
+                                   </div>
+                               </div>
+                               <button class=" btn btn-outline-light lenguages btn prev text-center">prev</button>
+                               <button class=" btn btn-outline-light lenguages btn next ">Next</button>
+                               <div class="dots"></div>
+                            </main>
+                      </ul>                       
    
                 </div>
             </div>
