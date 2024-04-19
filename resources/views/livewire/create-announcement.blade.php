@@ -38,9 +38,12 @@
             @enderror
           </div>
           {{-- input temporary_images (il wire:model collega l'imput con la nostra variabile, attributo multiple per poter aggiungere più file ) --}}
+
+           
             <div class="my-4">
-                <input wire:model="temporary_images" type="file" name ="images" multiple class="form-control shodow @error('temporary_images') is-ivalid @enderror" placeholder="img"/>
-            
+                <label class="form-label">{{__('ui.imageFile')}}</label>
+                <input wire:model="temporary_images" type="file" name ="images" multiple class=" custom-file-label form-control shodow @error('temporary_images') is-ivalid @enderror" placeholder="img"/>
+                
                 @error('temporary_images')
                 <p class="text-denger mt-2">{{$message}}</p>
                 @enderror
@@ -49,13 +52,13 @@
              @if(!empty($images))
              <div class="mb-4 row">
                  <div class="col-12">
-                     <p>Photo Preview:</p>
+                     <p>{{__('ui.PhotoPreview')}}:</p>
                      <div class="row border border-4 border-info rounded shadow py-4">
                          @foreach($images as $key=>$image)
                          <div class=" col-12">
                              <div class="img-preview mx-auto shadow rounded" style = "background-image:url({{$image->temporaryUrl()}})">
                              </div>
-                             <button type="button" class="btn btn-outline-denger" wire:click = "removeImage({{$key}})">Delete</button>
+                             <button type="button" class="btn btn-outline-denger" wire:click = "removeImage({{$key}})">{{__('ui.delete')}}</button>
                          </div>
                          @endforeach
                      </div>

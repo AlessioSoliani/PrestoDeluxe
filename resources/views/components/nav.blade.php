@@ -38,9 +38,7 @@
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">{{__('ui.allCategories')}}</a>
-            </li>
+          
 
             @auth
             <li class="nav-item">
@@ -78,8 +76,8 @@
             </ul>
           </li>
           <li class="nav-item  dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {{__('ui.categories')}}
+            <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">{{__('ui.allCategories')}}</a>
+            {{__('ui.categories')}}
             </a>
 
             <ul class=" border border-dark dropdown-menu">
@@ -93,10 +91,10 @@
         </ul>
           @else
           <li class="nav-item deluxe-style">
-            <a class="nav-link" href="/login">{{__('ui.login')}}</a>
+            <a class="nav-link text-center" href="/login">{{__('ui.login')}}</a>
           </li>
           <li class="nav-item deluxe-style">
-            <a class="nav-link btn btn-outline-light lenguages" href="/register">{{__('ui.register')}}</a>
+            <a class="nav-link text-center btn btn-outline-light lenguages" href="/register">{{__('ui.register')}}</a>
           </li>
           @endauth
 

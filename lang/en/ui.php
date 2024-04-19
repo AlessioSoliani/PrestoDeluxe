@@ -70,6 +70,9 @@ return [
      'LeaveYourDescription'=>'Leave Your Description',
      'chooseCategory'=>'choose Category',
      'Price'=>'Price',
+     'imageFile'=>'insert photos of your new deluxe advert',
+     'PhotoPreview'=>'Photo Preview',
+     'delete'=>'delete',
      'Send'=>'Send',     
     //endCreateAnnouncement
 

@@ -1,3 +1,10 @@
+
+    /* Nascondi il testo predefinito dell'input di tipo file */
+.custom-file-label::after {
+        content: none; /* Rimuove completamente il testo */
+    }
+
+
 .title{
     margin-top: 120px ;
     color:#e0ad21; 

@@ -71,6 +71,9 @@ return [
     'LeaveYourDescription'=>'deja una descripción',
     'chooseCategory'=>'selecciona la categoría',
     'Price'=>'precio',
+    'imageFile'=>'Inserta una imagen para tu artículo',
+    'PhotoPreview'=>'vista previa de la foto',
+    'delete'=>'borrar',
     'Send'=>'envia',
     //endCreateAnnouncement
     //become revisor
