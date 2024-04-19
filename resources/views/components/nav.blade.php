@@ -21,20 +21,20 @@
             <button type="button" class="btn btn-outline-light lenguages dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
               {{__('ui.languages')}}
             </button>
-            <ul class=" ms-5 mb-3 dropdown-menu  lenguages">              
-                <x-_locale lang='it' nation='italiano'/>                            
-                <x-_locale lang='en' nation='english'/>                                       
-                <x-_locale lang='es' nation='espaniol'/>              
+            <ul class="dropdown-menu ms-3 lenguages dropdown-menu">              
+                <x-_locale lang='it' nation='italiano'/>                   
+                <x-_locale lang='en' nation='english'/>      
+                <x-_locale lang='es' nation='espaniol'/>
             </ul>
           </div>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">{{__('ui.allCategories')}}</a>
-            </li>
+           
 
             @auth
+            
+
             <li class="nav-item">
               <a class="nav-link" href="{{route('announcements.create')}}">{{__('ui.enterNewAd')}}</a>
             </li>
@@ -70,8 +70,8 @@
             </ul>
           </li>
           <li class="nav-item  dropdown">
-            <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">{{__('ui.allCategories')}}</a>
-            {{__('ui.categories')}}
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{__('ui.categories')}}
             </a>
 
             <ul class=" border border-dark dropdown-menu">
@@ -83,12 +83,15 @@
             </ul>
           </li>
         </ul>
+        {{-- <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">{{__('ui.allCategories')}}</a>
+        </li> --}}
           @else
-          <li class="nav-item deluxe-style">
-            <a class="nav-link text-center" href="/login">{{__('ui.login')}}</a>
+          <li class=" mt-5 pt-5 nav-item deluxe-style">
+            <a class="nav-link" href="/login">{{__('ui.login')}}</a>
           </li>
           <li class="nav-item deluxe-style">
-            <a class="nav-link text-center btn btn-outline-light lenguages" href="/register">{{__('ui.register')}}</a>
+            <a class="nav-link lenguages" href="/register">{{__('ui.register')}}</a>
           </li>
           @endauth
 
