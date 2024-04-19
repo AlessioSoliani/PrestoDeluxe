@@ -21,24 +21,18 @@
             <button type="button" class="btn btn-outline-light lenguages dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
               {{__('ui.languages')}}
             </button>
-            <ul class=" lenguages styleColor dropdown-menu">
-              <li class=" mx-5 nav-item">
-                <x-_locale lang='it' nation='italiano'/>
-              </li>
-      
-              <li class=" mx-5 nav-item">
-                <x-_locale lang='en' nation='english'/>
-              </li>
-      
-              <li class=" mx-5 nav-item">
-                <x-_locale lang='es' nation='espaniol'/>
-              </li>
+            <ul class=" ms-5 mb-3 dropdown-menu  lenguages">              
+                <x-_locale lang='it' nation='italiano'/>                            
+                <x-_locale lang='en' nation='english'/>                                       
+                <x-_locale lang='es' nation='espaniol'/>              
             </ul>
           </div>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">{{__('ui.allCategories')}}</a>
+            </li>
 
             @auth
             <li class="nav-item">

@@ -4,11 +4,24 @@
         content: none; /* Rimuove completamente il testo */
     }
 
+.btn-lingue{   
+  color:white;
+}
+.btn-lingue:hover{
+  color: #16222A;
+}
+
 
 .title{
     margin-top: 120px ;
     color:#e0ad21; 
    
+}
+
+.dropdown-menu {
+  background-color: transparent; /* Imposta lo sfondo trasparente */
+  border: none; /* Rimuove i bordi */
+  box-shadow: none; /* Rimuove l'ombra */
 }
 
 .card-style-home{    
