@@ -7,9 +7,9 @@
     <section class="container">
         <div class="row justify-content-center">            
             @foreach ( $announcements as $announcement )
-              <div class=" card-style-home col-12 col-md-4" card" style="width: 18rem;">
+              <div class=" card-style-home col-12 col-md-4 card " style="width: 18rem;">
                   <div class=" d-flex justify-content-center">
-                       <img class="mt-3 img-style" src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://picsum.photos/101'}}" alt="">
+                       <img class="mt-3 img-style" src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(300,300) : 'http://picsum.photos/200'}}" >
                   </div>
                   <div class="card-body">
                       <h5 class=" text-center card-title">{{$announcement->title}}</h5>
