@@ -34,9 +34,9 @@
         
             @auth
        
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">{{__('ui.allCategories')}}</a>
-            </li>
+            </li> --}}
             {{-- <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{{route('User_profile')}}">{{__('ui.UserProfile')}}</a>
             </li> --}}

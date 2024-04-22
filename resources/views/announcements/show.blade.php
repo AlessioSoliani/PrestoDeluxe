@@ -21,6 +21,8 @@
                                   @foreach ($announcement->images as $image)
                                   <div class=" carousel-item @if ($loop->first) active @endif">
                                       <img src="{{Storage::url($image->path)}}" alt="">
+                                      <img class="mt-3 img-style" src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(300,300) : 'http://picsum.photos/200'}}" >
+
                                   </div>
                                   @endforeach
                                   @endif
