@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\UserProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,5 @@ Route::get('/rendi/revisore{user}',[RevisorController::class,'makeRevisor'])->na
 Route::get('/ricerca/annuncio',[PageController::class,'searchAnnouncements'])->name('announcements.search');
 
 Route::post('/lingua/{lang}', [PageController::class, 'setLanguage'])->name('set_language_locale');
+
+Route::resource('users_profiles',UserProfileController::class);

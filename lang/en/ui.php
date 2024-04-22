@@ -3,6 +3,7 @@
 return [
     //nav
     'languages'=>'languages',
+    'UserProfile'=>'user profile',
     'allCategories'=>'all categories',
     'enterNewAd'=>'enter new ad',
     'dashboard'=>'dashboard',
@@ -30,7 +31,6 @@ return [
     'clickHere'=>'clickHere',
     //announcements.show
     'title'=>'Title',
-    'leaveYourDescription'=>'leave Your Description',
     'category'=>'category',
     'chooseCategory'=>'choose Category',
     'price'=>'price',
@@ -67,7 +67,7 @@ return [
      //create announcement
      'CreateAnnouncement'=>'Create Announcement',
      'Title'=>'Title',
-     'LeaveYourDescription'=>'Leave Your Description',
+     'LeaveYourDescription'=>'Description',
      'chooseCategory'=>'choose Category',
      'Price'=>'Price',
      'imageFile'=>'insert photos of your new deluxe advert',

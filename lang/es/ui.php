@@ -3,6 +3,7 @@
 return [
     //nav
     'languages'=>' otros idiomas',
+    'UserProfile'=>'perfil del usuario',
     'allCategories'=>'Todas las categorías',
     'enterNewAd'=>'Insertar un nuevo anuncio',
     'dashboard'=>'Panel',
@@ -31,7 +32,6 @@ return [
     'clickHere'=>'click aquì',
     //announcements.show
     'title'=>'Titulo',
-    'leaveYourDescription'=>'Deja tu descripción',
     'category'=>'Categoria',
     'chooseCategory'=>'elije tu categoria',
     'price'=>'precio',
@@ -68,7 +68,7 @@ return [
     //create announcement
     'CreateAnnouncement'=>'crea un anuncio',
     'Title'=>'título',
-    'LeaveYourDescription'=>'deja una descripción',
+    'LeaveYourDescription'=>'descripción',
     'chooseCategory'=>'selecciona la categoría',
     'Price'=>'precio',
     'imageFile'=>'Inserta una imagen para tu artículo',

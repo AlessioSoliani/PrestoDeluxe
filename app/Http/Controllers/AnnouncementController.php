@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class AnnouncementController extends Controller
 {
     public function createAnnouncement(){
-        return view('announcements.create');
+        // $user = Auth::id();
+
+        return view('announcements.create');//,compact('user')
     }
 //showAnn. prende l'annuncio con la dependency injection
     public function showAnnouncement (Announcement $announcement){
@@ -18,11 +21,12 @@ class AnnouncementController extends Controller
     }
 
 
-    public function indexAnnouncement(){
+    public function indexAnnouncement(){        
+        // $announcements = Announcement::where('user_id',$user)->get();
         //dentro la variabile il modello announcement e dove is-accepted sara con valore true lo salviamo e motriamo nella vista
         //dedicata a tutti gli annunci
-        $announcements = Announcement::where('is_accepted',true)->paginate(7);
-        return view('announcements.index',compact('announcements'));
+        $announcements = Announcement::where('is_accepted',true )->paginate(7);
+        return view('announcements.index',compact('announcements','user'));
 
     }
 

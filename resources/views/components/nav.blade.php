@@ -31,11 +31,19 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
            
-
+        
             @auth
-            
-
+       
             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">{{__('ui.allCategories')}}</a>
+            </li>
+            {{-- <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{route('User_profile')}}">{{__('ui.UserProfile')}}</a>
+            </li> --}}
+           
+
+
+            <li class=" mt-5 pt-5 nav-item">
               <a class="nav-link" href="{{route('announcements.create')}}">{{__('ui.enterNewAd')}}</a>
             </li>
 
@@ -83,9 +91,6 @@
             </ul>
           </li>
         </ul>
-        {{-- <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">{{__('ui.allCategories')}}</a>
-        </li> --}}
           @else
           <li class=" mt-5 pt-5 nav-item deluxe-style">
             <a class="nav-link" href="/login">{{__('ui.login')}}</a>

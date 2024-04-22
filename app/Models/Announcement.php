@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Announcement extends Model
 {
+
     use HasFactory, Searchable;
     protected $fillable=['title','body','price'];
     //relazione one to many un annuncio per più utenti

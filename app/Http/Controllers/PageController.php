@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\User;
 use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
@@ -29,7 +32,7 @@ class PageController extends Controller
     public function setLanguage($lang){
         session()->put('locale', $lang);
         return redirect()->back();
-    }
+    }  
 
 }
 

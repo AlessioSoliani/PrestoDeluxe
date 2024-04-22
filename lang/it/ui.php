@@ -3,6 +3,7 @@
 return [
     //nav
     'languages'=>'altre lingue',
+    'UserProfile'=>'profilo utente',
     'allCategories'=>'Tutte le categorie',
     'enterNewAd'=>'Inserisci un nuovo annuncio',
     'dashboard'=>'Dashboard',
@@ -31,7 +32,6 @@ return [
     'clickHere'=>'Clicca qui',
      //announcements.show
     'title'=>'Titolo',
-    'leaveYourDescription'=>'Lascia la tua descrizione',
     'category'=>'Categoria',
     'chooseCategory'=>'Scegli la categoria',
     'price'=>'Prezzo',

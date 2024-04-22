@@ -19,6 +19,7 @@
                    </div>
                 <div class="card-body">
                     <h5 class=" text-center card-title">{{$announcement->title}}</h5>
+                  
                 </div>
                 <ul class="list-group list-group-flush">
                     {{-- <li class="text-center list-group-item">{{$announcement->body}}</li> --}}
@@ -30,6 +31,8 @@
                       <a class="btn btn-outline-light lenguages" href="{{route('announcements.show', compact('announcement'))}}">{{__('ui.show')}}</a>
                       <a class="btn btn-outline-light lenguages" href="{{route('categoryShow', ['category'=>$announcement->category])}}">{{__('ui.'.$announcement->category->name)}}</a>
                 </div>
+                <input type="hidden" name="{{Auth::id()}}" value="{{$announcements}}">
+                
             </div>
                 {{-- {{$announcements->links()}} --}}
             @empty
