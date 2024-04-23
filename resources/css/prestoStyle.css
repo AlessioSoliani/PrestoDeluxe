@@ -303,4 +303,7 @@ body{
   
   .img-preview{
     height: 500px;
+    width: 500px;
+    background-position: center;
+    background-repeat:no-repeat;
   }

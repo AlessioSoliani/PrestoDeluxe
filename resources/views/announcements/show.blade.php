@@ -17,15 +17,13 @@
                       <ul class="gallery">                 
                            <main class="carousel-container">                                                      
                                <div class="carousel">
-                                  @if($announcement->images)
-                                  @foreach ($announcement->images as $image)
-                                  <div class=" carousel-item @if ($loop->first) active @endif">
-                                      <img src="{{Storage::url($image->path)}}" alt="">
-                                      <img class="mt-3 img-style" src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(300,300) : 'http://picsum.photos/200'}}" >
-
-                                  </div>
-                                  @endforeach
-                                  @endif
+                                @if($announcement->images)                                 
+                                @foreach ($announcement->images as $image)
+                                    <div class="item @if ($loop->first) active @endif ">
+                                        <img class="img-fluid" src="{{($image->getUrl(500,500))}}" alt="">
+                                    </div>
+                                @endforeach
+                                @else
                                    <div class="item active">
                                       <!-- annuncio da revisionare  -->
                                       <img src="" alt="Image 1" />
@@ -39,7 +37,9 @@
                                       <img src="" alt="Image 3" />
                                       <p class="caption"></p>
                                    </div>
+
                                </div>
+                               @endif
                                <button class=" btn btn-outline-light lenguages btn prev text-center">prev</button>
                                <button class=" btn btn-outline-light lenguages btn next ">Next</button>
                                <div class="dots"></div>

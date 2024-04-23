@@ -22,7 +22,7 @@
                                             @if($announcement_to_check->images)                                 
                                             @foreach ($announcement_to_check->images as $image)
                                                 <div class="item @if ($loop->first) active @endif ">
-                                                    <img src="{{Storage::url($image->path)}}" alt="">
+                                                    <img src="{{($image->getUrl(500,500))}}" alt="">
                                                 </div>
                                             @endforeach
                                             @else

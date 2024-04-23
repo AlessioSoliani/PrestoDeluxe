@@ -2,22 +2,44 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 
 class AnnouncementController extends Controller
 {
+    public $images = []; 
+    public $image;
     public function createAnnouncement(){
         // $user = Auth::id();
 
         return view('announcements.create');//,compact('user')
     }
+    
+
+
 //showAnn. prende l'annuncio con la dependency injection
     public function showAnnouncement (Announcement $announcement){
+        
+        // if(count($this->images)){
+        //     foreach($this->images as $image){
+        //        // $this->announcement->images()->create(['path'=>$image->store('images','public')]);
+        //         $newFileName = "announcements/{$this->announcement->id}";
+        //         $newImage = $this->announcement->images()->create(['path'=>$image->store($newFileName,'public')]);
+        //         dispatch(new ResizeImage($newImage->path,600,500));
+        //     }
+
+        //     File::deleteDirectory(storage_path('/app/livewire-tmp'));
+            
+        // }
+
         // e rimanda alla vista, con una compact passiamo il dato dell'annuncio
         return view('announcements.show',compact('announcement'));
+
+
     }
 
 
