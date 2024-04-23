@@ -22,10 +22,32 @@
                                             @if($announcement_to_check->images->isNotEmpty())                                 
                                             @foreach ($announcement_to_check->images as $image)
                                                 <div class="item @if ($loop->first) active @endif ">
-                                                    <img src="{{($image->getUrl(500,500))}}" alt="">
-                                                </div>
+                                                         <img src="{{($image->getUrl(500,500))}}" alt="">
+                                                     </div>
+                                                         <div class="col-md-3 border-end">
+                                                             <h5 class="tc-accent mt-3">tags</h5>
+                                                             @if($image->labels)
+                                                             @foreach ($image->labels as $label)
+                                                                 <p>{{$label}}</p>
+                                                                 @endforeach
+                                                             @endif
+                                                         </div>                                                        
+                                                         
+                                                     </div>
+                                                     <div class="col-md-3">
+                                                         <div class="card-body">
+                                                             <h5 class="tc-accent">Revisione immagini</h5>
+                                                             <p>adulti: <span class="{{$image->adult}}"></span></p>
+                                                             <p>satira: <span class="{{$image->spoof}}"></span></p>
+                                                             <p>medicina: <span class="{{$image->medical}}"></span></p>
+                                                             <p>violenza: <span class="{{$image->violence}}"></span></p>
+                                                             <p>contenuto ammiccante: <span class="{{$image->racy}}"></span></p>
+                                                         </div>                                            
+                                                     </div>
+                                                     
                                             @endforeach
                                             @else
+                                            
                                           <div class="item active">
                                             <!-- annuncio da revisionare  -->
                                             <img src="" alt="Image 1" />
