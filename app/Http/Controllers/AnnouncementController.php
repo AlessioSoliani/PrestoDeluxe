@@ -22,19 +22,8 @@ class AnnouncementController extends Controller
 
 
 //showAnn. prende l'annuncio con la dependency injection
-    public function showAnnouncement (Announcement $announcement){
+    public function showAnnouncement (Announcement $announcement){       
         
-        // if(count($this->images)){
-        //     foreach($this->images as $image){
-        //        // $this->announcement->images()->create(['path'=>$image->store('images','public')]);
-        //         $newFileName = "announcements/{$this->announcement->id}";
-        //         $newImage = $this->announcement->images()->create(['path'=>$image->store($newFileName,'public')]);
-        //         dispatch(new ResizeImage($newImage->path,600,500));
-        //     }
-
-        //     File::deleteDirectory(storage_path('/app/livewire-tmp'));
-            
-        // }
 
         // e rimanda alla vista, con una compact passiamo il dato dell'annuncio
         return view('announcements.show',compact('announcement'));
@@ -47,7 +36,7 @@ class AnnouncementController extends Controller
         // $announcements = Announcement::where('user_id',$user)->get();
         //dentro la variabile il modello announcement e dove is-accepted sara con valore true lo salviamo e motriamo nella vista
         //dedicata a tutti gli annunci
-        $announcements = Announcement::where('is_accepted',true )->paginate(7);
+        $announcements = Announcement::where('is_accepted',true )->orderBy('created_at','desc')->paginate(7);
         return view('announcements.index',compact('announcements'));
 
     }

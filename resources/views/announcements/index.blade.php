@@ -15,8 +15,8 @@
             @forelse ($announcements as $announcement)
             <div class=" card-style-home col-12 col-md-4" style="width: 18rem;">
                    <div class=" d-flex justify-content-center">
-                    <img class="mt-3 img-style" src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(300,300) : 'http://picsum.photos/200'}}" >
-                </div>
+                      <img class="mt-3 img-style" src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(500,500) : 'http://picsum.photos/200'}}" >
+                   </div>
                 <div class="card-body">
                     <h5 class=" text-center card-title">{{$announcement->title}}</h5>
                   
@@ -31,10 +31,10 @@
                       <a class="btn btn-outline-light lenguages" href="{{route('announcements.show', compact('announcement'))}}">{{__('ui.show')}}</a>
                       <a class="btn btn-outline-light lenguages" href="{{route('categoryShow', ['category'=>$announcement->category])}}">{{__('ui.'.$announcement->category->name)}}</a>
                 </div>
-                <input type="hidden" name="{{Auth::id()}}" value="{{$announcements}}">
+                
                 
             </div>
-                {{-- {{$announcements->links()}} --}}
+              
             @empty
             <div class="col-12">
                 <p class="h1 text-center">{{__('ui.ThereAreNoAdsInThisSearch')}}</p>              

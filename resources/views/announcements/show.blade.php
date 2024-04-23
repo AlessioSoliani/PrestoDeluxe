@@ -11,16 +11,16 @@
       
 
         <section class=" mt-5container">
-            <div class="row">
-                <div class="col-12">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
                                             
                       <ul class="gallery">                 
                            <main class="carousel-container">                                                      
                                <div class="carousel">
-                                @if($announcement->images)                                 
+                                @if($announcement->images->isNotEmpty())                                 
                                 @foreach ($announcement->images as $image)
                                     <div class="item @if ($loop->first) active @endif ">
-                                        <img class="img-fluid" src="{{($image->getUrl(500,500))}}" alt="">
+                                        <img class="img-fluid" src="{{($image->getUrl(500,500))}}" alt="image">
                                     </div>
                                 @endforeach
                                 @else
@@ -38,8 +38,8 @@
                                       <p class="caption"></p>
                                    </div>
 
+                                   @endif
                                </div>
-                               @endif
                                <button class=" btn btn-outline-light lenguages btn prev text-center">prev</button>
                                <button class=" btn btn-outline-light lenguages btn next ">Next</button>
                                <div class="dots"></div>

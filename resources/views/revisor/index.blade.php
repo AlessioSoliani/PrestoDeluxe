@@ -19,7 +19,7 @@
                                 <ul class="gallery">
                                     <main class="carousel-container">
                                         <div class="carousel">
-                                            @if($announcement_to_check->images)                                 
+                                            @if($announcement_to_check->images->isNotEmpty())                                 
                                             @foreach ($announcement_to_check->images as $image)
                                                 <div class="item @if ($loop->first) active @endif ">
                                                     <img src="{{($image->getUrl(500,500))}}" alt="">

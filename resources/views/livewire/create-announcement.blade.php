@@ -20,8 +20,8 @@
         {{-- input category --}}
           <div class="mb-3 mt-3">
             <label for="category">{{__('ui.categories')}}</label>
-            <select class=" mt-3 mb-3 border border-warning rounded-2 form-select" wire:model.live="category_id">
-                <option>{{__('ui.chooseCategory')}}</option>
+            <select class=" mt-3 mb-3 border border-warning rounded-2 form-select" wire:model.live="category_id" id="category">
+                <option disabled value="null" >{{__('ui.chooseCategory')}}</option>
                 @foreach ($categories as $category )
                    <option
                     value="{{$category->id}}">{{__('ui.'.$category->name)}}
