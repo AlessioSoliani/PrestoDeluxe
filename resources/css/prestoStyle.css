@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Cinzel", serif !important;
+    font-family: "Cinzel", serif;
     font-optical-sizing: auto;
     font-weight: 400px;
     font-style: normal;  
@@ -194,8 +194,8 @@ body{
 .aspect-ratio-wrapper img {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  /* left: 0;
+  width: 100%; */
   object-fit: cover;
 }
 
