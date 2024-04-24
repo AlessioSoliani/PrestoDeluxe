@@ -33,7 +33,7 @@ hr{
 }
 
 .bgr-primary{
-    background-color: rgb(33, 37, 41);
+    background-color: white;
 }
 
 .bgr-secondary{
@@ -41,11 +41,11 @@ hr{
 }
 
 .bgr-terziary{
-    background-color: rgb(43, 48, 53);
+    background-color: white;
 }
 
 .color-primary{
-    color: rgb(33, 37, 41);
+    color: white;
 }
 
 .color-secondary{
@@ -53,7 +53,7 @@ hr{
 }
 
 .color-terziary{
-    color: rgb(43, 48, 53);
+    color: white;
 }
 
 
