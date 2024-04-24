@@ -1,7 +1,17 @@
 <x-main>
-    
-    <h1 class="text-center title display-5">Presto Deluxe</h1>
-    <hr>
+
+    <div class="hero">
+        <video controls autoplay muted loop id="video-homepage">
+          <source src="video-homepage.mp4" type="video/mp4">
+        </video>
+        <div class="hero_content">
+          <h1>{{__('ui.titlesite')}}</h1>
+      <form method="GET" action="{{route('announcements.index')}}">
+          @csrf
+          <button type="submit" class="btnscopri">Scopri ora</button>
+      </form>
+        </div>
+      </div>
 
 
     <section class="container">

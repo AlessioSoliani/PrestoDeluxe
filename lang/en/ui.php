@@ -97,6 +97,7 @@ return [
      'CreateOne'=>'Create One',
      'CreateYourAnnouncement'=>'Create Your Announcement',
      //endcategoryShow
+     'titlesite' => 'Your luxury, just a click away'
 
     
 ];

@@ -94,6 +94,7 @@ return [
      'CreateOne'=>'Creane uno',
      'CreateYourAnnouncement'=>'Crea il tuo annuncio',
      //endcategoryShow
+     'titlesite' => 'Il tuo lusso, a portata di click'
  
 
 ];

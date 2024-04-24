@@ -1,12 +1,8 @@
-<nav class="navbar list-unstyled bg-body-tertiary fixed-top">
-    <div class=" d-flex justify-content-between container-fluid">
-
-
-        <div class="d-flex justify-content-center">
-          {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
-          <a class="ms-4  TitleNav navbar-brand text-center" href="{{route('welcome')}}">Presto Deluxe</a>
-          {{-- <img class="img_logo" src="http://127.0.0.1:8000/DiamanteLogo.png" alt=""> --}}
-        </div>
+<nav class="navbar bg-body-tertiary fixed-top shadow rounded m-2">
+  <div class="container-fluid">
+      <div class="d-flex justify-content-start">
+        <a href="{{route('welcome')}}"><img class="navelement" src="http://127.0.0.1:8000/logo-bold.png" alt="Logo"></a>
+      </div>
 
        
 
