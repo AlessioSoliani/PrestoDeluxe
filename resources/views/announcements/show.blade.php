@@ -19,7 +19,7 @@
               @foreach($announcement->images as $key => $image)
                 <div class="carousel-item @if($loop->first) active @endif">
                   <div class="d-flex justify-content-center align-items-center aspect-ratio-wrapper">
-                    <img src="{{$image->getUrl(500, 500)}}" class="d-block w-100" alt="Image {{$key+1}}">
+                    <img src="{{$image->getUrl(500, 500)}}" class="d-block" alt="Image {{$key+1}}">
                   </div>
                 </div>
               @endforeach

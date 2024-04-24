@@ -23,7 +23,7 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     {{-- <li class="text-center list-group-item">{{$announcement->body}}</li> --}}
-                    <li class="text-center list-group-item">{{$announcement->price}}€</li>
+                    <li class="text-center bg-transparent list-group-item">{{$announcement->price}}€</li>
                     {{-- <li class="list-group-item">{{$announcement->category}}$</li> --}}
                     {{-- <li class="text-center list-group-item "> {{__('ui.date')}}:{{$announcement->created_at->format('d/m/Y')}}</li> --}}
                 </ul>
