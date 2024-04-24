@@ -78,82 +78,28 @@
         </section>      
     @endif
 
-    @if (session()->has('message'))
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8 text-center">
-                {{ session('message') }}
-                @if ($lastAnnouncement)
-                    <form action="{{ route('revisor.recover_announcement', $lastAnnouncement->id) }}" method="POST">
-                        @csrf
-                        @method('PATCH')
-                        @php $decisionMade = session()->has('decision_made'); @endphp
-                        <button class="btn btn-outline-success languages" type="submit" @if($decisionMade) style="display: none;" @endif>Ho sbagliato, ripristina annuncio precedente</button>
-                        <a href="{{ route('revisor.index') }}" class="btn btn-outline-light languages" @if($decisionMade) style="display: none;" @endif>Confermo la mia decisione</a>
-                    </form>
-                @endif 
-            </div>
-        </div>
-    </div>
-@endif
-
-
-    {{-- @if (session()->has('message'))
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8 text-center">
-                {{ session('message') }}
-                @if ($lastAnnouncement)
-                    <form action="{{ route('revisor.recover_announcement', $lastAnnouncement->id) }}" method="POST">
-                        @csrf
-                        @method('PATCH')
-                        <button class="btn btn-outline-success languages" type="submit">Ho sbagliato, ripristina annuncio precedente</button>
-                        <a href="{{ route('revisor.index') }}" class="btn btn-outline-light languages">Confermo la mia decisione</a>
-                    </form>
-                @endif 
-            </div>
-        </div>
-    </div>
-@endif                 --}}
-
-
-
-                            {{-- @if (session()->has('message'))                         
-                              <div class="conteiner ">
-                                <div class="row justify-content-center">
-                                    <div class="col-12 col-md-8 text-center">
-                                        {{session('message')}}
-                                        @if($lastAnnouncement)
-                                        <form action="{{route('revisor.recover_announcement',$lastAnnouncement->id)}}" method="POST">
-                                          @csrf
-                                          @method('PATCH')
-                                          <a href="{{route('revisor.index')}}" class="btn btn-outline-success languages" type="submit">ho sbagliato recupera</a>
-                                          <a href="{{route('revisor.index')}}" class="btn btn-outline-light languages" type="submit">confermo la mia decisione</a>
-                                       </form>                                 
-
-                                     @endif 
-                                    </div>
-                                 </div> 
-                              </div>        
-                            @endif --}}
-
+       @if (session()->has('message'))
+           <div class="container">
+               <div class="row justify-content-center">
+                   <div class="col-12 col-md-8 text-center">
+                       {{ session('message') }}
+                       @if ($lastAnnouncement)
+                           <form action="{{ route('revisor.recover_announcement', $lastAnnouncement->id) }}" method="POST">
+                               @csrf
+                               @method('PATCH')
+                               @php $decisionMade = session()->has('decision_made'); @endphp
+                               <button class="btn btn-outline-success languages" type="submit" @if($decisionMade)" @endif>Ho sbagliato, ripristina annuncio precedente</button>
+                               <a href="{{ route('revisor.index') }}" class="btn btn-outline-light languages" @if($decisionMade)" @endif>Confermo la mia decisione</a>
+                           </form>
+                       @endif 
+                   </div>
+               </div>
+           </div>
+       @endif                            
 </x-main>
 
 
 
 
 
-  {{--                                                   
- <div class="item active">
-   <!-- annuncio da revisionare  -->
-   <img src="" alt="Image 1" />
-   <p class="caption"></p>
- </div>
- <div class="item">
-   <img src="" alt="Image 2" />
-   <p class="caption"></p>
- </div>
- <div class="item">
-   <img src="" alt="Image 3" />
-   <p class="caption"></p>
- </div> --}}
+ 
