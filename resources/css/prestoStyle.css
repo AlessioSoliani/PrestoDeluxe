@@ -110,7 +110,7 @@ body{
 
 .color-secondary{
     background-color:white;
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
@@ -194,8 +194,6 @@ body{
 .aspect-ratio-wrapper img {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
   object-fit: cover;
 }
 
