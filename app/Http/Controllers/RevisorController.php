@@ -46,6 +46,7 @@ class RevisorController extends Controller
     {
        $announcement->is_accepted=null;          
         $announcement->save();
+        session()->put('decision_made', true);
         return redirect()->back()->with('message', 'Announcement restored');
     }
 
