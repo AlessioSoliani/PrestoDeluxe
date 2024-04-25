@@ -64,6 +64,7 @@ return [
     'hello'=>'hola',
     'WelcomeToYourDeluxeArea'=>'Bienvenido en tu área reservada',
     'becomeRevisor'=>'¡conviértete en editor!',
+    'social'=>'Sìganos',
     //EndFooter
     //create announcement
     'CreateAnnouncement'=>'crea un anuncio',
@@ -85,7 +86,9 @@ return [
     //revisorIndex
     'Description'=>'descripción',
     'Accept'=>'Acepta',
-    'Reject'=>'Recupera',
+    'Reject'=>'Rechaza',
+    'sbaglioRevisor'=>'recuperar el último anuncio',
+    'confermaRevisor'=>'Confirmo la decisión',
     'DeluxeToBeRevisoned'=>'anuncios para revisar',
     'ThereAreNoAnnouncementsToBeRevisoned'=>'no hay anuncios que revisar',
     //endRevisorIndex

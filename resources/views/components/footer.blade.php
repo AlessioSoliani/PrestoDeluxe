@@ -106,7 +106,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h4 class=" mt-5 text-center">Follow Us</h4>
+        <h4 class=" mt-5 text-center">{{__('ui.social')}}</h4>
       </div>
     </div>
   </div>

@@ -62,12 +62,12 @@
                         <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-outline-light lenguages" type="submit">accetta</button>
+                            <button class="btn btn-outline-light lenguages" type="submit">{{__('ui.Accept')}}</button>
                         </form>
                         <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-outline-danger lenguages" type="submit">rifiuta</button>
+                            <button class="btn btn-outline-danger lenguages" type="submit">{{__('ui.Reject')}}</button>
                         </form>
                        
                     
@@ -88,8 +88,8 @@
                                @csrf
                                @method('PATCH')
                                @php $decisionMade = session()->has('decision_made'); @endphp
-                               <button class="btn btn-outline-success languages" type="submit" @if($decisionMade)" @endif>Ho sbagliato, ripristina annuncio precedente</button>
-                               <a href="{{ route('revisor.index') }}" class="btn btn-outline-light languages" @if($decisionMade)" @endif>Confermo la mia decisione</a>
+                               <button class="btn btn-outline-info languages" type="submit" @if($decisionMade)" @endif>{{__('ui.sbaglioRevisor')}}</button>
+                               <a href="{{ route('revisor.index') }}" class="btn btn-outline-light languages" @if($decisionMade)" @endif>{{__('ui.confermaRevisor')}}</a>
                            </form>
                        @endif 
                    </div>

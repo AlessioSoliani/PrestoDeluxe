@@ -60,9 +60,12 @@ return [
     'ConfirmPassword'=>'conferma password',
     'Send'=>'invia',
     //endRegister
+    //footer
     'hello'=>'ciao',
     'WelcomeToYourDeluxeArea'=>'Benvenuto nella tua deluxe area',
     'becomeRevisor'=>'diventa revisore',
+    'social'=>'Seguici',
+    //endfooter
     //create announcement
     'CreateAnnouncement'=>'crea un annuncio',
     'Title'=>'titolo',
@@ -85,6 +88,8 @@ return [
      'Accept'=>'Accetta',
      'Reject'=>'Rifiuta',
      'Recover'=>'Recupera',
+     'sbaglioRevisor'=>'recupera l\'ultimo annuncio',
+    'confermaRevisor'=>'Confirmo la decisión',
      'DeluxeToBeRevisoned'=>'Annunci deluxe da revisionare',
      'ThereAreNoAnnouncementsToBeRevisoned'=>'non ci sono annunci da revisionare',
 

@@ -40,7 +40,8 @@
                 <p class="h1 text-center">{{__('ui.ThereAreNoAdsInThisSearch')}}</p>              
             </div>
             @endforelse
-            {{$announcements->links()}}
+
+            <div class="w-100 mt-4 d-flex bg-transparent justify-content-center"> {{$announcements->links()}}</div>
         </div>
     </section>
 

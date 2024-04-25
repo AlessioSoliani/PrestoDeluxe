@@ -2,15 +2,16 @@
 
 namespace App\Livewire;
 
-use App\Jobs\googleVisionLabelImage;
-use App\Jobs\GoogleVisionSafeSearch;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
 use Illuminate\Validation\Rule;
 use Livewire\Attributes\Validate;
+use App\Jobs\googleVisionLabelImage;
+use App\Jobs\GoogleVisionSafeSearch;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
@@ -97,9 +98,11 @@ class CreateAnnouncement extends Component
                // $this->announcement->images()->create(['path'=>$image->store('images','public')]);
                 $newFileName = "announcements/{$this->announcement->id}";
                 $newImage = $this->announcement->images()->create(['path'=>$image->store($newFileName,'public')]);
-                dispatch(new ResizeImage($newImage->path,500,500));
-                dispatch(new GoogleVisionSafeSearch($newImage->id));
-                dispatch(new googleVisionLabelImage($newImage->id));
+                RemoveFaces::withChain([
+                    new ResizeImage($newImage->path,500,500),
+                    new GoogleVisionSafeSearch($newImage->id),
+                    new googleVisionLabelImage($newImage->id)
+                ])->dispatch($newImage->id);
              
             }
 
