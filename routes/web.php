@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\userProfile;
 use App\Http\Controllers\UserProfileController;
 
 /*
@@ -44,4 +45,4 @@ Route::get('/ricerca/annuncio',[PageController::class,'searchAnnouncements'])->n
 
 Route::post('/lingua/{lang}', [PageController::class, 'setLanguage'])->name('set_language_locale');
 
-Route::resource('users_profiles',UserProfileController::class);
+Route::get('profiloUtente',[userProfile::class,'UserProfile'])->name('user_profile');

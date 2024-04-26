@@ -4,29 +4,43 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-4">
-                <form method="POST" action="/register">
+                <form method="POST" action="/register" enctype="multipart/form-data" >
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">{{__('ui.Name')}}</label>
                         <input type="text" class="form-control" name="name" value="{{old('name')}}">
-                    </div>
-                      @error('name')
+                        @error('name')
                           <span>{{$message}}</span>
-                      @enderror
+                        @enderror
+                    </div>                      
                        <div class="mb-3">
                          <label class="form-label"> {{__('ui.AccountEmail')}}</label>
                          <input type="email" class="form-control" name="email"  value="{{old('email')}}">
-                       </div>
-                      @error('email')
-                          <span>{{$message}}</span>
-                      @enderror
+                          @error('email')
+                           <span>{{$message}}</span>
+                          @enderror
+                       </div>  
+                       <div>
+                        <label class="form-label" for="user_photo">User Photo</label>
+                        <input id="user_photo" type="file" class="form-control" name="user_photo" value="{{ old('user_photo') }}" required autofocus>
+                    </div>
+                    
+                    <div>
+                        <label class="form-label" for="telephone_number">Telephone Number</label>
+                        <input id="telephone_number" type="tel" class="form-control" name="telephone_number" value="{{ old('telephone_number') }}" required>
+                    </div>
+                    
+                    <div>
+                        <label class="form-label" for="location">Location</label>
+                        <input id="location" type="text" class="form-control" name="location" value="{{ old('location') }}" required>
+                    </div>                    
                        <div class="mb-3">
                          <label class="form-label">{{__('ui.Password')}}</label>
                          <input type="password" class="form-control" name="password">
-                       </div>
-                      @error('password')
-                      <span>{{$message}}</span>
-                     @enderror
+                         @error('password')
+                           <span>{{$message}}</span>
+                         @enderror
+                       </div>                     
                       <div class="mb-3">
                         <label class="form-label">{{__('ui.ConfirmPassword')}} </label>
                         <input type="password" class="form-control" name="password_confirmation">
