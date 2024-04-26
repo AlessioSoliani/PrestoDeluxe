@@ -8,7 +8,7 @@
            @if(!Auth::check())  
            <div>
             <h3>{{__('ui.register')}}</h3>
-            <a class="btn btn-outline-light lenguages" href="/register">{{__('ui.clickHere')}}</a>
+            <a class="btn btn-outline-light lenguages rounded" href="/register">{{__('ui.clickHere')}}</a>
           </div>                           
               
             @elseif((Auth::user() && Auth::user()->is_revisor))

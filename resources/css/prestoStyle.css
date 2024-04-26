@@ -208,3 +208,73 @@ body{
       text-align: justify;
       padding: 20px; 
 }
+
+/* creazione nuovo annuncio*/
+
+.first-category-item {
+  background-color: white;
+  color: black;
+}
+
+.choose-category option {
+  background-color: rgba(8, 79, 140);
+  color: white;
+}
+
+.img-preview {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  position: relative;
+}
+
+/* Stile del velo grigio */
+.img-preview::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Stile dell'icona del cestino */
+.delete-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Stile del tasto "delete" quando passi sopra con il mouse */
+.img-preview:hover::before {
+  opacity: 1;
+}
+
+/* Mostra l'icona del cestino quando passi sopra con il mouse */
+.img-preview:hover .delete-icon {
+  opacity: 1;
+}
+
+/* Rimuovi il contorno e il bordo delle icone Font Awesome */
+.img-preview .delete-icon {
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+
+
+

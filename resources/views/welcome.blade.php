@@ -22,11 +22,11 @@
                        <img class="mt-3 img-style" src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(500,500) : 'http://picsum.photos/200'}}" >
                   </div>
                   <div class="card-body">
-                      <h5 class=" text-center card-title">{{$announcement->title}}</h5>
+                      <h5 class="text-center card-title">{{$announcement->title}}</h5>
                   </div>
                   <ul class="list-group list-group-flush">
                       {{-- <li class="text-center styleColor list-group-item">{{$announcement->body}}</li> --}}
-                      <li class="text-center bg-transparent list-group-item">{{$announcement->price}}€</li>
+                      <li class="text-center bg-transparent text-white list-group-item">{{$announcement->price}}€</li>
                       {{-- <li class="list-group-item">{{$announcement->category}}$</li> --}}
                       {{-- <li class="text-center styleColor list-group-item "> {{__('ui.date')}}:{{$announcement->created_at->format('d/m/Y')}}</li> --}}
                   </ul>

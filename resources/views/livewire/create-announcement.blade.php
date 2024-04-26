@@ -18,17 +18,17 @@
             @enderror
         </div>
         {{-- input category --}}
-          <div class="mb-3 mt-3">
+ {{-- input category --}}
+        <div class="mb-3 mt-3">
             <label for="category">{{__('ui.categories')}}</label>
-            <select class=" mt-3 mb-3 border border-warning rounded-2 form-select" wire:model.live="category_id" id="category">
-                <option disabled value="null" >{{__('ui.chooseCategory')}}</option>
-                @foreach ($categories as $category )
-                   <option
-                    value="{{$category->id}}">{{__('ui.'.$category->name)}}
-                   </option>
+            <select class="mt-3 mb-3 border rounded-2 form-select choose-category" wire:model.live="category_id" id="category">
+                <option disabled value="null" class="choose-category-placeholder">{{__('ui.chooseCategory')}}</option>
+                @foreach ($categories as $index => $category)
+                    <option value="{{$category->id}}" @if($index == 0) class="first-category-item" @endif>{{__('ui.'.$category->name)}}</option>
                 @endforeach
-              </select>
-          </div>
+            </select>
+        </div>
+
           {{-- input price --}}
           <div class="mb-3">
             <label class="form-label">{{__('ui.Price')}}</label>
@@ -48,28 +48,30 @@
                 <p class="text-denger mt-2">{{$message}}</p>
                 @enderror
             </div>
-            {{-- logica btn images --}}
-             @if(!empty($images))
-             <div class="mb-4 row">
-                 <div class="col-12">
-                     <p>{{__('ui.PhotoPreview')}}:</p>
-                     <div class="row border border-4 border-info rounded shadow py-4">
-                         @foreach($images as $key=>$image)
-                         <div class=" col-12">
-                             <div class="img-preview mx-auto shadow rounded" style = "background-image:url({{$image->temporaryUrl()}})">
-                             </div>
-                             <button type="button" class="btn btn-outline-denger" wire:click = "removeImage({{$key}})">{{__('ui.delete')}}</button>
-                         </div>
-                         @endforeach
-                     </div>
-                 </div>
-             </div>
-             @endif
+            @if(!empty($images))
+            <div class="mb-4 row">
+                <div class="col-12">
+                    <p>{{__('ui.PhotoPreview')}}:</p>
+                    <div class="row border border-4 border-info rounded shadow py-4">
+                        @foreach($images as $key => $image)
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3"> <!-- Imposta le dimensioni delle colonne per i vari dispositivi -->
+                            <div class="img-preview mx-auto shadow rounded" style="background-image:url({{$image->temporaryUrl()}})">
+                                <button type="button" class="delete-icon" wire:click="removeImage({{$key}})">
+                                    <i class="fas fa-trash-alt"></i> <!-- Icona del cestino -->
+                                </button>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            @endif
+
 
              
              {{-- btn invia form --}}
              <div class="d-flex mt-4 justify-content-center">
-                 <button type="submit" class="btn btn-outline-light lenguages">{{__('ui.Send')}}</button>
+                 <button type="submit" class="btn btn-outline-light lenguages rounded">{{__('ui.Send')}}</button>
              </div>
     </form>
              {{-- logica di messaggi in caso di errata o giusta  compilazione del form  --}}
