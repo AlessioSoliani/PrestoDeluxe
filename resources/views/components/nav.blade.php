@@ -57,12 +57,16 @@
 
             @endif
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link lenguages" href="{{route('user_profile')}}" role="button">
               {{auth()->user()->name}}
-
             </a>
 
+          {{-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{{route('user_profile')}}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{auth()->user()->name}}
+
+            </a> 
+            
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#" onclick="event.preventDefault();
               document.getElementById('form-logout').submit();
@@ -71,7 +75,7 @@
               @csrf
               </form>
               </li>
-            </ul>
+            </ul> --}}
           </li>
           <li class="nav-item  dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

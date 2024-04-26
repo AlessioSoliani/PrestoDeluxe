@@ -1,11 +1,14 @@
 <?php
 
+ 
+use App\Actions\Fortify\EditUserProfileInformation;
+use App\Http\Controllers\userProfile;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\RevisorController;
-use App\Http\Controllers\AnnouncementController;
-use App\Http\Controllers\userProfile;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\AnnouncementController;
+use App\Actions\Fortify\UpdateUserProfileInformation;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,5 +47,10 @@ Route::get('/rendi/revisore{user}',[RevisorController::class,'makeRevisor'])->na
 Route::get('/ricerca/annuncio',[PageController::class,'searchAnnouncements'])->name('announcements.search');
 
 Route::post('/lingua/{lang}', [PageController::class, 'setLanguage'])->name('set_language_locale');
-
+//profilo utente
 Route::get('profiloUtente',[userProfile::class,'UserProfile'])->name('user_profile');
+
+Route::POST('modificaProfilo',[UpdateUserProfileInformation::class,'update'])->name('update_profile');
+
+Route::get('/profile/edit', [EditUserProfileInformation::class, 'edit'])->name('profile.edit');
+

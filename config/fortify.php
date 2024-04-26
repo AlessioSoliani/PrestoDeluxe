@@ -144,6 +144,9 @@ return [
     */
 
     'features' => [
+
+        Features::registration() => ['create_new_user' => App\Actions\Fortify\CreateNewUser::class],
+        Features::updateProfileInformation() => ['update_user_profile_information' => App\Actions\Fortify\UpdateUserProfileInformation::class],
         Features::registration(),
         Features::resetPasswords(),
         // Features::emailVerification(),
