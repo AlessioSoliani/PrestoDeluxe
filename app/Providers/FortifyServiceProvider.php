@@ -29,11 +29,9 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-<<<<<<< HEAD
+
         // Fortify::editUserProfileInformationUsing(EditUserProfileInformation::class);
-=======
-        //Fortify::editUserProfileInformationUsing(EditUserProfileInformation::class);
->>>>>>> 9b18b59c41b6f3cfc8d01b536dd8abfb7f64c30c
+        Fortify::editUserProfileInformationUsing(EditUserProfileInformation::class); 
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
