@@ -12,7 +12,7 @@ class Announcement extends Model
 {
 
     use HasFactory, Searchable;
-    protected $fillable=['title','body','price'];
+    protected $fillable=['title','body','price','user_id'];
     //relazione one to many un annuncio per più utenti
     public function user()
     {

@@ -1,5 +1,6 @@
 <x-main>
     <h1 class="text-center mt-5 pt-5 display-6">modifica il tuo profilo</h1>
+  
     <form method="POST" action="/user/profile-information" enctype="multipart/form-data" >
         @csrf
         @method('PUT')

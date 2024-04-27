@@ -15,8 +15,10 @@ class AnnouncementController extends Controller
     public $image;
     public function createAnnouncement(){
         // $user = Auth::id();
+    $user = Auth::user();
+    $userId = $user->id;
 
-        return view('announcements.create');//,compact('user')
+        return view('announcements.create',compact('userId'));
     }
     
 

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
+use Illuminate\Support\Facades\Redirect;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 {
@@ -17,7 +18,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
      *
      * @param  array<string, string>  $input
      */
-    public function update(User $user, array $input): void
+    public function update(User $user, array $input):void
     {
         
         Validator::make($input, [
@@ -62,8 +63,13 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             // Aggiorna il percorso della nuova foto del profilo
             $user->update(['user_photo' => $userPhotoPath]);
         }
+        
       }  
+    
     }
+
+
+
 
     public function edit(){
         $user = auth()->user();

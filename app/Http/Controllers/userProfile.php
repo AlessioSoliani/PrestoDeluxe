@@ -10,7 +10,8 @@ class userProfile extends Controller
 {
     public function UserProfile(User $user){
         $user=Auth::user();
-        return view('Profilo.user_profile',compact('user'));
+        $announcements = $user->announcements()->get();
+        return view('Profilo.user_profile',compact('user', 'announcements'));
 
     }
 }

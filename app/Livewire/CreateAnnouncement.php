@@ -29,7 +29,9 @@ class CreateAnnouncement extends Component
     public $images = []; 
     public $image;
     public $announcement;  
-
+    public $userId;
+    public $user_id;
+    
 
 
     protected $rules = [
@@ -53,6 +55,13 @@ class CreateAnnouncement extends Component
         'images.*.max'=>'l\'immagine deve essere di massimo 1mb',
         'images.*.required'=>'carica almeno un\'immagine',
     ];
+    
+
+    public function mount($userId)
+    {
+        $this->userId = $userId;
+        $this->user_id = $userId;
+    }
 
     public function updatedTemporaryImages()
     {         
@@ -77,6 +86,8 @@ class CreateAnnouncement extends Component
         }
 
     public function store(){
+       // dd($userId);
+      // dd($this->user_id);
         $this->validate();
         // dd($this);
         // salviamo il record della categoria attraverso il metodo find:
@@ -88,6 +99,7 @@ class CreateAnnouncement extends Component
             'title'=>$this->title,
             'body'=>$this->body,
             'price'=>$this->price,
+            'user_id' => $this->user_id,
         ]);
         //quì ripetuto il codice che prima era nel public render
         // //$this->validate();

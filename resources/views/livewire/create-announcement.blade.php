@@ -48,6 +48,9 @@
                 <p class="text-denger mt-2">{{$message}}</p>
                 @enderror
             </div>
+
+            <input type="hidden" name="user_id" wire:model="user_id" value="{{ $userId }}">
+
             @if(!empty($images))
             <div class="mb-4 row">
                 <div class="col-12">
