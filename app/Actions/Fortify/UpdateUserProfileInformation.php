@@ -19,6 +19,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
      */
     public function update(User $user, array $input): void
     {
+        
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
 
@@ -62,6 +63,11 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->update(['user_photo' => $userPhotoPath]);
         }
       }  
+    }
+
+    public function edit(){
+        $user = auth()->user();
+        return view('Profilo.edit_prpofile', compact('user'));
     }
 }
     /**

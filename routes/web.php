@@ -50,7 +50,6 @@ Route::post('/lingua/{lang}', [PageController::class, 'setLanguage'])->name('set
 //profilo utente
 Route::get('profiloUtente',[userProfile::class,'UserProfile'])->name('user_profile');
 
-Route::POST('modificaProfilo',[UpdateUserProfileInformation::class,'update'])->name('update_profile');
+Route::get('/profile/edit', [UpdateUserProfileInformation::class, 'edit'])->name('profile.edit');
 
-Route::get('/profile/edit', [EditUserProfileInformation::class, 'edit'])->name('profile.edit');
 
