@@ -55,7 +55,7 @@
             <div class="mb-4 row">
                 <div class="col-12">
                     <p>{{__('ui.PhotoPreview')}}:</p>
-                    <div class="row border border-4 border-info rounded shadow py-4">
+                    <div class="row d-flex justify-content-center align-items-center">
                         @foreach($images as $key => $image)
                         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3"> <!-- Imposta le dimensioni delle colonne per i vari dispositivi -->
                             <div class="img-preview mx-auto shadow rounded" style="background-image:url({{$image->temporaryUrl()}})">
@@ -84,4 +84,3 @@
              </div>
              @endif
 </div>
-

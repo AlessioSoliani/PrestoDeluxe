@@ -210,7 +210,6 @@ body{
 }
 
 /* creazione nuovo annuncio*/
-
 .first-category-item {
   background-color: white;
   color: black;
@@ -228,7 +227,6 @@ body{
   position: relative;
 }
 
-/* Stile del velo grigio */
 .img-preview::before {
   content: "";
   background-color: rgba(0, 0, 0, 0.5);
@@ -241,7 +239,7 @@ body{
   transition: opacity 0.3s ease;
 }
 
-/* Stile dell'icona del cestino */
+/* Cestino */
 .delete-icon {
   position: absolute;
   top: 50%;
@@ -253,17 +251,15 @@ body{
   transition: opacity 0.3s ease;
 }
 
-/* Stile del tasto "delete" quando passi sopra con il mouse */
 .img-preview:hover::before {
   opacity: 1;
 }
 
-/* Mostra l'icona del cestino quando passi sopra con il mouse */
 .img-preview:hover .delete-icon {
   opacity: 1;
 }
 
-/* Rimuovi il contorno e il bordo delle icone Font Awesome */
+
 .img-preview .delete-icon {
   border: none;
   outline: none;
@@ -271,10 +267,3 @@ body{
   padding: 0;
   margin: 0;
 }
-
-
-
-
-
-
-
