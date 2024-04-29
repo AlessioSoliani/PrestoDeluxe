@@ -9,7 +9,7 @@
     @endif
 
     <!-- Social -->
-    <div class="row justify-content-center mb-4">
+    <div class="row justify-content-center mb-4 mt-2">
       <div class="col-auto">
         <a class="btn btn-outline-light btn-floating m-1 rounded-circle" href="#!" role="button">
           <i class="fa-brands fa-facebook"></i>
