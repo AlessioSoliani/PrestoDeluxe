@@ -28,13 +28,18 @@
     padding: 10px;
 }
 
-.dropdown-lingua .dropdown-menu .nav-link,
-.dropdown-registrazione .dropdown-menu .nav-link {
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.dropdown-lingua .dropdown-menu .nav-linkdue,
+.dropdown-registrazione .dropdown-menu .nav-linkdue {
     margin-bottom: 10px;
 }
 
-.dropdown-lingua .dropdown-menu .nav-link:hover,
-.dropdown-registrazione .dropdown-menu .nav-link:hover {
+.dropdown-lingua .dropdown-menu .nav-linkdue:hover,
+.dropdown-registrazione .dropdown-menu .nav-linkdue:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
@@ -44,9 +49,13 @@
     color: white;
 }
 
-
-
-.dropdown-toggle {
+.form-wrapper {
+  margin: 20px;
+}
+.form-container {
+  background: linear-gradient(59deg, #698EB6, #104B82);
+  padding: 20px;
+  border-radius: 10px;
   color: white;
 }
 
