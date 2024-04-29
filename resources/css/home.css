@@ -7,9 +7,6 @@
 .btn-lingue{   
   color:white;
 }
-.btn-lingue:hover{
-  color: white;
-}
 
 
 .title{
@@ -19,9 +16,38 @@
 }
 
 .dropdown-menu {
-  background-color: transparent; /* Imposta lo sfondo trasparente */
+  background-color: rgba(8, 79, 140, 0.5);
   border: none; /* Rimuove i bordi */
-  box-shadow: none; /* Rimuove l'ombra */
+  padding: 10px;
+}
+
+.dropdown-lingua .dropdown-menu,
+.dropdown-registrazione .dropdown-menu {
+    background-color: rgba(8, 79, 140, 0.5);
+    border: none;
+    padding: 10px;
+}
+
+.dropdown-lingua .dropdown-menu .nav-link,
+.dropdown-registrazione .dropdown-menu .nav-link {
+    margin-bottom: 10px;
+}
+
+.dropdown-lingua .dropdown-menu .nav-link:hover,
+.dropdown-registrazione .dropdown-menu .nav-link:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.dropdown-lingua .dropdown-toggle,
+.dropdown-registrazione .dropdown-toggle {
+    color: white;
+}
+
+
+
+.dropdown-toggle {
+  color: white;
 }
 
 .card-style-home{    
