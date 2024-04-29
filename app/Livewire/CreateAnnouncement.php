@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Category;
 use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
+use App\Jobs\setWatermark;
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
 use Illuminate\Validation\Rule;
@@ -19,26 +20,26 @@ use Illuminate\Support\Facades\Validator;
 class CreateAnnouncement extends Component
 {
     use WithFileUploads;
-     
-   
-    public $title;   
-    public $body;  
-    public $price;  
-    public $category_id;   
-    public $temporary_images;    
-    public $images = []; 
+
+
+    public $title;
+    public $body;
+    public $price;
+    public $category_id;
+    public $temporary_images;
+    public $images = [];
     public $image;
-    public $announcement;  
+    public $announcement;
     public $userId;
     public $user_id;
-    
+
 
 
     protected $rules = [
         'title'=>'required|min:3|max:150',
         'body'=>'required|min:8',
         'price'=>'required',
-        'category_id'=>'required',        
+        'category_id'=>'required',
         'images.*' => 'image|required|max:1024',
         'temporary_images.*'=>'image|required|max:1024',
     ];
@@ -48,14 +49,14 @@ class CreateAnnouncement extends Component
         'title'=>'il titolo è troppo lungo',
         'body'=>'la descrizione è neccessaria',
         'body'=> 'la descrizione è troppo corta',
-        'price'=>'il prezzo è fondamentale',        
+        'price'=>'il prezzo è fondamentale',
         'temporary_images.required'=> 'l\'immagine è richiesta',
         'temporary_images.*.image'=> 'I file devono essere immagini',
         'temporary_images.*.max'=> 'l\'immagine deve essere di massimo 1mb',
         'images.*.max'=>'l\'immagine deve essere di massimo 1mb',
         'images.*.required'=>'carica almeno un\'immagine',
     ];
-    
+
 
     public function mount($userId)
     {
@@ -64,8 +65,8 @@ class CreateAnnouncement extends Component
     }
 
     public function updatedTemporaryImages()
-    {         
-        if($this->validate([//validazione di temporary_images se supera la validazione 
+    {
+        if($this->validate([//validazione di temporary_images se supera la validazione
             'temporary_images.*'=>'image|max:1024',
             ])){
                 foreach($this->temporary_images as $image){
@@ -110,25 +111,26 @@ class CreateAnnouncement extends Component
                // $this->announcement->images()->create(['path'=>$image->store('images','public')]);
                 $newFileName = "announcements/{$this->announcement->id}";
                 $newImage = $this->announcement->images()->create(['path'=>$image->store($newFileName,'public')]);
-                new setWatermark($newimage->id);
-                
+
                 RemoveFaces::withChain([
                     new ResizeImage($newImage->path,500,500),
                     new GoogleVisionSafeSearch($newImage->id),
                     new googleVisionLabelImage($newImage->id),
+                    new setWatermark($newImage->id),
+
                 ])->dispatch($newImage->id);
-             
+
             }
 
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
-            
+
         }
         session()->flash('message','articolo creato con successo');
         $this->cleanForm();
 
         // Auth::user()->announcements()->save($announcement);
 
-        
+
     }
 
         public function cleanForm(){
@@ -138,7 +140,7 @@ class CreateAnnouncement extends Component
             $this->category_id='';
             $this->images = [];
             $this->temporary_images = [];
-           
+
 
 
         $this->formreset();
@@ -157,7 +159,7 @@ class CreateAnnouncement extends Component
     {
         return view('livewire.create-announcement');
     }
-   
-   
-        
+
+
+
     }
