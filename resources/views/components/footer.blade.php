@@ -3,8 +3,22 @@
     @if(!Auth::check())  
       <div class="row justify-content-center mb-4">
         <div class="col-12 text-center mt-5 mb-4">
-          <a class="btn btn-outline-light" href="/register">{{__('ui.register')}}</a>
+          <h3>{{__('ui.register')}}</h3>
+          <a class="btn btn-outline-light" href="/register">{{__('ui.clickHere')}}</a>
         </div>
+      </div>
+    @elseif(Auth::check() && Auth::user()->is_revisor)
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            {{__('ui.hello')}} {{auth()->user()->name}} {{__('ui.WelcomeToYourDeluxeArea')}}                
+          </div>  
+        </div>
+      </div>
+    @else
+      <div class="col-12 text-center mt-5">
+        <h3>{{__('ui.becomeRevisor')}}</h3>
+        <a class="btn btn-outline-light" href="{{route('become.revisor')}}">{{__('ui.clickHere')}}</a>
       </div>
     @endif
 
@@ -58,12 +72,11 @@
         </div>
       </div>
       <!-- Fine Contatti -->
-        <div class="d-flex justify-content-center mb-0">
-          <span style="font-size: inherit;">© 2024</span>
-          <span style="font-size: inherit;">Copyright:</span>
-          <a class="text-white text-decoration-none body" href="https://mdbootstrap.com/" style="font-size: inherit;">Presto Deluxe</a>
+      <div class="d-flex justify-content-center mb-0">
+        <span style="font-size: inherit;">© 2024</span>
+        <span style="font-size: inherit;">Copyright:</span>
+        <a class="text-white text-decoration-none body" href="https://mdbootstrap.com/" style="font-size: inherit;">Presto Deluxe</a>
       </div>
     </div>
   </div>
 </footer>
-
