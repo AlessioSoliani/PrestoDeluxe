@@ -33,7 +33,7 @@
                     <p>{{$user->location}}</p>
                 </div>                             
                 <div class="d-flex justify-content-center">
-                    <a class="btn btn-outline-light" href="#" onclick="event.preventDefault();
+                    <a class="btn btn-outline-light mb-3" href="#" onclick="event.preventDefault();
                     document.getElementById('form-logout').submit();
                     ">{{__('ui.logout')}}</a>
                     <form method="POST" action="/logout" id="form-logout">
