@@ -33,14 +33,16 @@
                     <p>{{$user->location}}</p>
                 </div>                             
                 <div class="d-flex justify-content-center">
-                    <a class="btn btn-outline-light lenguages" href="#" onclick="event.preventDefault();
+                    <a class="btn btn-outline-light" href="#" onclick="event.preventDefault();
                     document.getElementById('form-logout').submit();
                     ">{{__('ui.logout')}}</a>
                     <form method="POST" action="/logout" id="form-logout">
                     @csrf
                     </form>                  
                 </div>   
-                <a href="#modifica-profilo">modifica profilo</a>                                              
+                <div>
+                    <a class="btn btn-outline-info" href="{{route('profile.edit')}}">modifica profilo</a>                                              
+                </div>
             </div>
         </div>
     </section>
@@ -82,7 +84,7 @@
         </div>
     </section>
 
-    <section id="modifica-profilo" class="mt-5">
+    {{-- <section id="modifica-profilo" class="mt-5">
         <div class="deluxe">  
             <p class='text-center'>modifica il tuo profilo</p>
             <div class="container">
@@ -138,7 +140,7 @@
                 </div>
             </div>
           </div>  
-    </section>
+    </section> --}}
 
 </x-main>
 
