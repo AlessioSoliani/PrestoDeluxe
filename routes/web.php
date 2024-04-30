@@ -24,6 +24,7 @@ use App\Actions\Fortify\UpdateUserProfileInformation;
 Route::get('/',[PageController::class, 'home'])->name('welcome');
 
 Route::get('/nuovo/annuncio',[AnnouncementController::class, 'createAnnouncement'])->middleware('auth')->name('announcements.create');
+Route::delete('anunncio/{Announcement}',[userProfile::class,'destroyAd'])->name('destroy_Ad');
 //Rotta parametrica delle categorie uttilizzata per passare (category) e prendere tutti gli articoli della singola categoria
 Route::get('/categoria/{category}',[PageController::class,'categoryShow'])->name('categoryShow');
 //Rotta parametrica per la pagina dettaglio del singolo annuncio
