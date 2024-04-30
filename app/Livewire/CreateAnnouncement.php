@@ -111,6 +111,7 @@ class CreateAnnouncement extends Component
                // $this->announcement->images()->create(['path'=>$image->store('images','public')]);
                 $newFileName = "announcements/{$this->announcement->id}";
                 $newImage = $this->announcement->images()->create(['path'=>$image->store($newFileName,'public')]);
+
                 RemoveFaces::withChain([
                     new setWatermark($newImage->id),
 
@@ -121,6 +122,7 @@ class CreateAnnouncement extends Component
 
                 ])->dispatch($newImage->id);
 
+               // dispatch(new setWatermark($newImage->id));
             }
 
             File::deleteDirectory(storage_path('/app/livewire-tmp'));

@@ -38,11 +38,12 @@ class setWatermark implements ShouldQueue
         $srcPath = storage_path('app/public/' . $i->path);
         $image = file_get_contents($srcPath);
 
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
-
         $image = SpatieImage::load($srcPath);
-        $image->watermark('resources/img-1/watermark.png')
-                ->watermarkPosition(Manipulations::POSITION_CENTER);
+        $image->watermark(base_path('resources/img-1/watermark.png'))
+                ->watermarkPosition(Manipulations::POSITION_CENTER)
+                ->watermarkFit(Manipulations::FIT_STRETCH)
+                ->watermarkOpacity(50)
+                ->watermarkPosition(Manipulations::POSITION_BOTTOM);
         $image->save($srcPath);
         
     }
