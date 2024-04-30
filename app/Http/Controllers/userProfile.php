@@ -19,15 +19,15 @@ class userProfile extends Controller
 
     public function destroyAd($announcementId){ 
         $announcement = Announcement::findOrFail($announcementId); 
-         
+
         if (!auth()->check()) {
-            return redirect()->back()->with(['error' => 'Devi effettuare l\'accesso per eliminare l\'annuncio']);
+            return redirect()->back()->with(['error' => 'Devi effettuare l accesso per eliminare l annuncio']);
         }
-           
+
         if ($announcement->user_id !== auth()->id()) {
                 return redirect()->back()->with(['error' => 'Non hai i permessi per eliminare questo annuncio']);
-            }        
-         
+            }
+
             foreach ($announcement->images as $image) {
                 Storage::delete($image->path);
                 $image->delete();

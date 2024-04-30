@@ -68,7 +68,7 @@
                         <li class="text-center bg-transparent text-white list-group-item">{{$announcement->price}}€</li>
                         
                     </ul>
-                    <div class=" d-flex justify-content-around card-body my-3">
+                    {{-- <div class=" d-flex justify-content-around card-body my-3">
                           <a class="btn btn-outline-light rounded" href="{{route('announcements.show', compact('announcement'))}}">{{__('ui.show')}}</a>
                           <a class="btn btn-outline-light rounded" href="{{route('categoryShow', ['category'=>$announcement->category])}}">{{__('ui.'.$announcement->category->name)}}</a>
                           <form method="POST" action="{{route('destroy_Ad',$announcement->id)}}">
@@ -77,7 +77,17 @@
                             <button type="submite" class="btn btn-outline-danger">delete</button>
                         </form>
                     </div>
-                </div>
+                </div> --}}
+                <div class=" d-flex justify-content-around card-body my-3">
+                    <a class="btn btn-outline-light rounded" href="{{route('announcements.show', compact('announcement'))}}">{{__('ui.show')}}</a>
+                    <a class="btn btn-outline-light rounded" href="{{route('categoryShow', ['category'=>$announcement->category])}}">{{__('ui.'.$announcement->category->name)}}</a>
+                    <form method="POST" action="{{route('destroy_Ad',$announcement->id)}}">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submite" class="btn btn-outline-danger">delete</button>
+                  </form>
+              </div>
+            </div>
                 @endforeach
             
             @endif
