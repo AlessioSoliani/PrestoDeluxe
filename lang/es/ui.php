@@ -4,7 +4,7 @@ return [
     //nav
     'languages'=>' otros idiomas',
     'UserProfile'=>'perfil del usuario',
-    'allCategories'=>'Todas las categorías',
+    'allCategories'=>'todos los anuncios disponibles',
     'enterNewAd'=>'Insertar un nuevo anuncio',
     'dashboard'=>'Panel',
     'announcementsToBeRevised'=>'Anuncios a revisar',

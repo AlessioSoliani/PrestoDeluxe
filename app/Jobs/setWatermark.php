@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use Log;
 use App\Models\Image;
 use Illuminate\Bus\Queueable;
 use Spatie\Image\Manipulations;
@@ -32,7 +33,7 @@ class setWatermark implements ShouldQueue
         $i=Image::find($this->announcement_image_id);
         if(!$i){
             return;
-
+        }
 
         $srcPath = storage_path('app/public/' . $i->path);
         $image = file_get_contents($srcPath);
@@ -43,7 +44,8 @@ class setWatermark implements ShouldQueue
         $image->watermark('resources/img-1/watermark.png')
                 ->watermarkPosition(Manipulations::POSITION_CENTER);
         $image->save($srcPath);
+        
     }
+    
 
-}
 }

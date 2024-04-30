@@ -4,7 +4,7 @@ return [
     //nav
     'languages' => 'languages',
     'UserProfile' => 'user profile',
-    'allCategories' => 'all categories',
+    'allCategories' => 'all available ads',
     'enterNewAd' => 'enter new ad',
     'dashboard' => 'dashboard',
     'announcementsToBeRevised' => 'announcements To Be Revised',

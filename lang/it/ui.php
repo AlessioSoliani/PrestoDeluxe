@@ -4,7 +4,7 @@ return [
     //nav
     'languages'=>'altre lingue',
     'UserProfile'=>'profilo utente',
-    'allCategories'=>'Tutte le categorie',
+    'allCategories'=>'Tutti gli annunci disponibili',
     'enterNewAd'=>'Inserisci un nuovo annuncio',
     'dashboard'=>'Dashboard',
     'announcementsToBeRevised'=>'Annunci da revisionare',

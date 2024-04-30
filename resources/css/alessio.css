@@ -1,0 +1,13 @@
+
+    @media only screen and (max-width: 767px) {
+    /* Regole CSS per smartphone */
+    /* Ad esempio: */
+   .logoQuerie{
+    display:none ;
+    
+   }
+   .navelement{
+    width: 230%;
+    height: auto;
+   }
+  }
