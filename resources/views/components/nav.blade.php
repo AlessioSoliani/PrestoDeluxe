@@ -26,11 +26,20 @@
                     <i class="fas fa-user fa-fw text-white"></i>
                  </button>
                @auth
-                 <ul class="dropdown-menu ms-3">
+            <ul class="dropdown-menu ms-3">
                      <li>
-                         <a class="nav-link text-white" href="{{route('user_profile')}}" role="button"> {{auth()->user()->name}} </a>
+                         <a class="nav-link" href="{{route('user_profile')}}" role="button"> {{auth()->user()->name}} </a>
                      </li>              
-                 </ul>
+                 
+                 
+                    <a class="nav-link" href="#" onclick="event.preventDefault();
+                    document.getElementById('form-logout').submit();
+                    ">{{__('ui.logout')}}</a>
+                    <form method="POST" action="/logout" id="form-logout">
+                    @csrf
+                    </form>                  
+                  
+            </ul>
              @else
                  <ul class="dropdown-menu ms-3">
                      <li>
