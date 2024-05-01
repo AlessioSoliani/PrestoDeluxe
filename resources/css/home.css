@@ -210,7 +210,7 @@ ul.social-network li {
 .hero {
   position: relative;
   width: 100%;
-  height: 80vh; 
+  height: 100vh; 
   overflow: hidden; 
   margin-bottom: 0;
 }
@@ -220,7 +220,7 @@ ul.social-network li {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   object-fit: cover;
 }
 
@@ -257,6 +257,42 @@ ul.social-network li {
   background-color: rgba(8, 79, 140, 0.5);
   transition: background-color 0.5s ease;
 }
+
+
+.category-icon {
+  text-align: center; /* Centra l'icona all'interno del suo contenitore */
+  margin-bottom: 20px; /* Aggiunge spazio tra le icone */
+  margin: 20px;
+}
+
+.category-icon img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%; /* Rendi le immagini tonde */
+  transition: transform 0.3s ease;
+}
+
+.category-icon img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 767.98px) {
+  .row {
+      justify-content: center;
+  }
+
+  .category-icon {
+      text-align: center;
+  }
+
+  .category-icon img {
+    max-height: 80vh;
+    width: auto;
+}
+}
+
+
+
 
 .animated-element {
     animation: slideFromBottom 1.5s ease-out forwards;
