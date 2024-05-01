@@ -1,18 +1,76 @@
 <x-main>
 
     <div class="hero">
-        <video controls autoplay muted loop id="video-homepage">
-          <source src="video-hero.mp4" type="video/mp4">
-        </video>
+        <video id="video-homepage" loop muted style="display: none;">
+            <source src="video-hero.mp4" type="video/mp4">
+        </video>         
         <div class="hero_content">
-          <h1>{{__('ui.titlesite')}}</h1>
-      <form method="GET" action="{{route('announcements.index')}}">
-          @csrf
-          <button type="submit" class="btnscopri">Scopri ora</button>
-      </form>
+            <h1 id="title">{{__('ui.titlesite')}}</h1>
+            <form method="GET" action="{{route('announcements.index')}}">
+                @csrf
+                <button id="button" type="submit" class="btnscopri">Scopri ora</button>
+            </form>
         </div>
-      </div>
-
+    </div>
+    
+    
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-4 offset-md-1 col-md-2 col-lg-2">
+                <div class="category-icon">
+                    <img src="/1.png" alt="Immagine 1">
+                </div>
+            </div>
+            <div class="col-4 col-md-2 col-lg-2">
+                <div class="category-icon">
+                    <img src="/2.png" alt="Immagine 2">
+                </div>
+            </div>
+            <div class="col-4 col-md-2 col-lg-2">
+                <div class="category-icon">
+                    <img src="/3.png" alt="Immagine 3">
+                </div>
+            </div>
+            <div class="col-4 col-md-2 col-lg-2">
+                <div class="category-icon">
+                    <img src="/4.png" alt="Immagine 4">
+                </div>
+            </div>
+            <div class="col-4 col-md-2 col-lg-2">
+                <div class="category-icon">
+                    <img src="/5.png" alt="Immagine 5">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 offset-md-1 col-md-2 col-lg-2">
+                <div class="category-icon">
+                    <img src="/6.png" alt="Immagine 6">
+                </div>
+            </div>
+            <div class="col-4 col-md-2 col-lg-2">
+                <div class="category-icon">
+                    <img src="/7.png" alt="Immagine 7">
+                </div>
+            </div>
+            <div class="col-4 col-md-2 col-lg-2">
+                <div class="category-icon">
+                    <img src="/8.png" alt="Immagine 8">
+                </div>
+            </div>
+            <div class="col-4 col-md-2 col-lg-2">
+                <div class="category-icon">
+                    <img src="/9.png" alt="Immagine 9">
+                </div>
+            </div>
+            <div class="col-4 col-md-2 col-lg-2">
+                <div class="category-icon">
+                    <img src="/10.png" alt="Immagine 10">
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
     <section class="container">
         <div class="row justify-content-center">            
@@ -52,4 +110,5 @@
        </div> 
     </div>        
 @endif
+<script src="{{ asset('js/welcome.js') }}"></script>
 </x-main>
