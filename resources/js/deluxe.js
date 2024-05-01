@@ -50,6 +50,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  document.addEventListener("DOMContentLoaded", function () {
+    let video = document.getElementById("video-homepage");
+
+    // Nascondi il video finché non è completamente caricato
+    video.addEventListener("loadeddata", function() {
+        video.style.display = "block";
+        video.play(); // Avvia la riproduzione quando il video è completamente caricato
+    });
+
+    // Imposta il video in loop
+    video.addEventListener("ended", function() {
+        video.play();
+    });
+});
+
+
 
   
 

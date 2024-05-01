@@ -1,17 +1,18 @@
 <x-main>
 
     <div class="hero">
-        <video controls autoplay muted loop id="video-homepage">
-          <source src="video-hero.mp4" type="video/mp4">
-        </video>
+        <video id="video-homepage" autoplay loop muted style="display: none;">
+            <source src="video-hero.mp4" type="video/mp4">
+        </video>         
         <div class="hero_content">
-          <h1>{{__('ui.titlesite')}}</h1>
-      <form method="GET" action="{{route('announcements.index')}}">
-          @csrf
-          <button type="submit" class="btnscopri">Scopri ora</button>
-      </form>
+            <h1>{{__('ui.titlesite')}}</h1>
+            <form method="GET" action="{{route('announcements.index')}}">
+                @csrf
+                <button type="submit" class="btnscopri">Scopri ora</button>
+            </form>
         </div>
-      </div>
+    </div>
+    
 
 
     <section class="container">
@@ -52,4 +53,5 @@
        </div> 
     </div>        
 @endif
+<script src="{{ asset('js/welcome.js') }}"></script>
 </x-main>
