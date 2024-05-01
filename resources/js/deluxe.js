@@ -50,20 +50,57 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Hero
   document.addEventListener("DOMContentLoaded", function () {
     let video = document.getElementById("video-homepage");
-
-    // Nascondi il video finché non è completamente caricato
+  
     video.addEventListener("loadeddata", function() {
         video.style.display = "block";
-        video.play(); // Avvia la riproduzione quando il video è completamente caricato
+        video.play(); 
+ 
+        setTimeout(function() {
+            document.querySelector(".hero_content h1").classList.add("show");
+            document.querySelector(".hero_content button").classList.add("show");
+        }, 500); 
     });
 
-    // Imposta il video in loop
+    
     video.addEventListener("ended", function() {
         video.play();
     });
 });
+
+// categorie
+
+document.addEventListener("DOMContentLoaded", function () {
+  const icons = document.querySelectorAll(".category-icon img");
+
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function showIcons() {
+    icons.forEach((icon) => {
+      if (isInViewport(icon)) {
+        icon.classList.add("show");
+      } else {
+        icon.classList.remove("show");
+      }
+    });
+  }
+
+  showIcons();
+
+  window.addEventListener("scroll", showIcons);
+});
+
 
 
 

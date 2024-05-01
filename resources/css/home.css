@@ -216,6 +216,7 @@ ul.social-network li {
 }
 
 #video-homepage {
+  position: fixed;
   z-index: -1;
   top: 0;
   left: 0;
@@ -251,6 +252,7 @@ ul.social-network li {
   margin-top: 20px;
   display: inline-block;
   width: calc(100% - 40px); 
+  transition: transform 0.3s ease;
 }
 
 .hero_content button:hover {
@@ -258,18 +260,39 @@ ul.social-network li {
   transition: background-color 0.5s ease;
 }
 
+.hero_content h1,
+.hero_content button {
+  opacity: 0;
+  transform: translateY(20px); 
+  transition: opacity 1s ease, transform 3s ease; 
+}
+
+.hero_content h1.show,
+.hero_content button.show {
+  opacity: 1; 
+  transform: translateY(0); 
+}
+
+
 
 .category-icon {
-  text-align: center; /* Centra l'icona all'interno del suo contenitore */
-  margin-bottom: 20px; /* Aggiunge spazio tra le icone */
+  text-align: center; 
+  margin-bottom: 20px; 
   margin: 20px;
 }
 
 .category-icon img {
   max-width: 100%;
   height: auto;
-  border-radius: 50%; /* Rendi le immagini tonde */
-  transition: transform 0.3s ease;
+  border-radius: 50%;
+  opacity: 0; 
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(25px); 
+}
+
+.category-icon img.show {
+  opacity: 1; 
+  transform: translateY(0); 
 }
 
 .category-icon img:hover {

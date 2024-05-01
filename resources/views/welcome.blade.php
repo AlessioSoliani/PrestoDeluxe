@@ -5,13 +5,14 @@
             <source src="video-hero.mp4" type="video/mp4">
         </video>         
         <div class="hero_content">
-            <h1>{{__('ui.titlesite')}}</h1>
+            <h1 id="title">{{__('ui.titlesite')}}</h1>
             <form method="GET" action="{{route('announcements.index')}}">
                 @csrf
-                <button type="submit" class="btnscopri">Scopri ora</button>
+                <button id="button" type="submit" class="btnscopri">Scopri ora</button>
             </form>
         </div>
     </div>
+    
     
     <div class="container mt-5 mb-5">
         <div class="row">
