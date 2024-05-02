@@ -37,7 +37,7 @@ a {
   color: inherit;
 } */
 
- .cards-wrapper {
+ /* .cards-wrapper {
   display: grid;
   justify-content: center;
   align-items: center;
@@ -46,12 +46,27 @@ a {
   padding: 4rem;
   margin: 0 auto;
   width: max-content;
-} 
+}  */
+.btnsprofile{ 
+    margin-left: 40px;  
+    border-radius: 70%;
+    width: 600px;
+    height: 300px;
+    -webkit-box-shadow: 0px 0px 33px -6px #000000; 
+     box-shadow: 0px 0px 33px -6px #000000;
+     background-image: url('/public/sfondoHome.png'); /* Inserisci qui l'URL dell'immagine */
+    background-size: cover; /* Per adattare l'immagine allo spazio disponibile */
+    background-position: center; /* Per centrare l'immagine all'interno dell'elemento */
+   
+}
 
 .card {
   font-family: 'Heebo';
   --bg-filter-opacity: 0.5;
-  background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
+  /* background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img); */
+  background-image: url('/public/sfondoHome.png'); /* Inserisci qui l'URL dell'immagine */
+  background-size: cover; /* Per adattare l'immagine allo spazio disponibile */
+  background-position: center; /* Per centrare l'immagine all'interno dell'elemento */
   height: 19em;
   width: 13em;
   font-size: 1.5em;
@@ -103,11 +118,11 @@ a {
 }
 
 .card:hover .tags .tag {
-  background: var(--color);
+  background: rgb(70, 116, 162);
   color: white;
 }
 
-.card .date {
+/* .card .date {
   position: absolute;
   top: 0;
   right: 0;
@@ -115,11 +130,11 @@ a {
   padding: 1em;
   line-height: 1em;
   opacity: .8;
-}
+} */
 
 .card:before, .card:after {
   content: '';
-  transform: scale(0);
+  transform: scale(2.1);
   transform-origin: top left;
   border-radius: 50%;
   position: absolute;

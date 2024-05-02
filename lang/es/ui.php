@@ -97,7 +97,10 @@ return [
     'CreateOne'=>'Crea uno',
     'CreateYourAnnouncement'=>'crea tu anuncio ',
     //endcategoryShow
-    'titlesite' => 'Tu lujo, al alcance de un clic'
+    'titlesite' => 'Tu lujo, al alcance de un clic',
+     //yourProfile
+   'yourProfile'=>'tu perfil',
+   //endyourProfile
     
 ];
 
