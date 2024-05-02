@@ -10,44 +10,45 @@
    </div> 
 </div>        
 @endif
-    <section class="container mt-5">
-        <div class="row justify-content-center">
-     
-            <div class="col-12 col-md-6 d-flex justify-content-end">
-                @if(Auth::check() && Auth::user()->user_photo)
-                     <img src="{{ asset('storage/' . Auth::user()->user_photo) }}" alt="User Photo">
-                 @endif
-            </div>
-              
-            <div class="col-12 col-md-6 mt-5 d-flex align-items-center flex-column">
-                <div class="d-flex justify-content-center">
-                    <p>{{$user->name}}</p>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <p>{{$user->email}}</p>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <p>{{$user->telephone_number}}</p>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <p>{{$user->location}}</p>
-                </div>                             
-                <div class="d-flex justify-content-center">
-                    <a class="btn btn-outline-light" href="#" onclick="event.preventDefault();
-                    document.getElementById('form-logout').submit();
-                    ">{{__('ui.logout')}}</a>
-                    <form method="POST" action="/logout" id="form-logout">
-                    @csrf
-                    </form>                  
-                </div>   
-                <div>
-                    <a class="btn btn-outline-info" href="{{route('profile.edit')}}">modifica profilo</a>                                              
-                </div>
+
+  <section class="cards-wrapper">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="d-flex justify-content-center">
+                <a class="btn btn-outline-light" href="#" onclick="event.preventDefault();
+                document.getElementById('form-logout').submit();
+                ">{{__('ui.logout')}}</a>
+                <form method="POST" action="/logout" id="form-logout">
+                @csrf
+                </form>                  
+            </div>   
+            <div>
+                <a class="btn btn-outline-info" href="{{route('profile.edit')}}">modifica profilo</a>                                              
             </div>
         </div>
-    </section>
+        <div class="col-12 col-md-6">
+            <div class="card-grid-space">
+                <a class="card bg-transparent" href="https://codetheweb.blog/2017/10/06/html-syntax/">
+                  @if(Auth::check() && Auth::user()->user_photo)
+                               <img class="w-100 mt-0" src="{{ asset('storage/' . Auth::user()->user_photo) }}" alt="User Photo">
+                           @endif
+                  <div class=" text-start w-100 m-2">
+                    <h3 class="mb-0">{{$user->name}}</h3>
+                    <p  class="mb-0">{{$user->email}}</p>
+                    <p  class="mb-0">{{$user->telephone_number}}</p>          
+                    <p  class="mb-0">{{$user->location}}</p>     
+                         
+                  </div>
+                </a>
+            </div>
+        </div>        
+    </div>    
+  </section>  
 
-    <section class="container mt-5">
+  
+  {{-- sezzione annunci --}}
+
+  <section class="container mt-5">
         <div class="row justify-content-center">     
             <h1>i tuoi annunci</h1>
             @if($announcements->isEmpty())
@@ -58,7 +59,7 @@
                 @foreach($announcements as $announcement)
                 <div class="card-style-home col-12 col-md-4 rounded" style="width: 18rem;">
                     <div class=" d-flex justify-content-center">
-                         <img class="mt-3 img-style" src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(500,500) : 'http://picsum.photos/200'}}" >
+                         <img class="mt-3 img-style rounded-circle" src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(500,500) : 'http://picsum.photos/200'}}" >
                     </div>
                     <div class="card-body">
                         <h5 class="text-center card-title">{{$announcement->title}}</h5>
@@ -82,7 +83,7 @@
             
             @endif
         </div>
-    </section>
+  </section>
 
     
 </x-main>

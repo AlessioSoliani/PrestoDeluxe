@@ -119,11 +119,12 @@
                 <li class="nav-item">
                     <a class="nav-link lenguages" href="/register">{{__('ui.register')}}</a>
                 </li>
-                <div class=" dropdown d-inline-block dropdown-lingua">
-                    <button class="btn dropdown-toggle me-3" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
-                        <i class="fas fa-globe fa-fw text-white"></i>
+                <div class="nav-link dropend d-inline-block dropdown-lingua">
+                    <button class=" nav-link btn dropdown-toggle me-3" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+                    {{__('ui.languages')}}
+                        {{-- <i class="fas fa-globe fa-fw text-white"></i> --}}
                     </button>
-                   <ul class="dropdown-menu">
+                   <ul class="dropdown-menu w-50">
                        <x-_locale lang='it' nation='italiano'/>
                        <x-_locale lang='en' nation='english'/>
                        <x-_locale lang='es' nation='espaniol'/>
