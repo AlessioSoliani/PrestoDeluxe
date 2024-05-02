@@ -42,15 +42,15 @@
         </div>
         <div class="col-12 col-md-6">
             <div class=" me-5 mt-3 card-grid-space d-flex justify-content-center">
-                <a class="card bg-transparent" href="https://codetheweb.blog/2017/10/06/html-syntax/">
+                <a class="card-alessio bg-transparent" href="https://codetheweb.blog/2017/10/06/html-syntax/">
                   @if(Auth::check() && Auth::user()->user_photo)
                                <img class="w-100 mt-0" src="{{ asset('storage/' . Auth::user()->user_photo) }}" alt="User Photo">
                            @endif
                   <div class=" text-start w-100 m-2">
-                    <h3 class="mb-0">{{$user->name}}</h3>
-                    <p  class="mb-0">{{$user->email}}</p>
-                    <p  class="mb-0">{{$user->telephone_number}}</p>          
-                    <p  class="mb-0">{{$user->location}}</p>     
+                    <h3 class="text-white mb-0">{{$user->name}}</h3>
+                    <p  class="text-white mb-0">{{$user->email}}</p>
+                    <p  class="text-white mb-0">{{$user->telephone_number}}</p>          
+                    <p  class="text-white mb-0">{{$user->location}}</p>     
                          
                   </div>
                 </a>
