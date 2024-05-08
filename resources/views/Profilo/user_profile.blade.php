@@ -41,8 +41,8 @@
           @endif
         </div>
         <div class="col-12 col-md-6">
-            <div class=" me-5 mt-3 card-grid-space d-flex justify-content-center">
-                <a class="card-alessio bg-transparent" href="https://codetheweb.blog/2017/10/06/html-syntax/">
+            <div class=" me-5 mt-3  d-flex justify-content-center">
+                <a class=" w-50 m-5 styleColor bg-transparent" href="https://codetheweb.blog/2017/10/06/html-syntax/">
                   @if(Auth::check() && Auth::user()->user_photo)
                                <img class="w-100 mt-0" src="{{ asset('storage/' . Auth::user()->user_photo) }}" alt="User Photo">
                            @endif
